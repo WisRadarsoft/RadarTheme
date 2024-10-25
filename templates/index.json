@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "image_banner": {
@@ -13,7 +22,7 @@
         "text": {
           "type": "text",
           "settings": {
-            "text": "Se de mange nedsatte varer og køb løs hele ugen!<\/br>*Brug koden BLACK2024",
+            "text": "Se de mange nedsatte varer og køb løs hele ugen!*Brug koden BLACK2024 xxx",
             "text_style": "body"
           }
         },
@@ -21,7 +30,7 @@
           "type": "buttons",
           "settings": {
             "button_label_1": "SE NEDSATTE VARER",
-            "button_link_1": "shopify:\/\/collections\/all",
+            "button_link_1": "shopify://collections/all",
             "button_style_secondary_1": false,
             "button_label_2": "",
             "button_link_2": "",
@@ -35,7 +44,7 @@
         "button"
       ],
       "settings": {
-        "image": "shopify:\/\/shop_images\/Rectangle_2x_21f43bc2-5076-4d22-8dba-ec89342a8df0.jpg",
+        "image": "shopify://shop_images/Rectangle_2x_21f43bc2-5076-4d22-8dba-ec89342a8df0.jpg",
         "image_overlay_opacity": 40,
         "image_height": "adapt",
         "desktop_content_position": "middle-center",
@@ -54,8 +63,8 @@
         "image_7VDkGc": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Rectangle_978_2x_fc3ba914-6671-4a64-b7c6-1fa423f32c24.png",
-            "image_text_head": "<strong>Nye styles<\/strong>",
+            "image": "shopify://shop_images/Rectangle_978_2x_fc3ba914-6671-4a64-b7c6-1fa423f32c24.png",
+            "image_text_head": "<strong>Nye styles</strong>",
             "image_text_body": "VINTEREN ER PÅ VEJ",
             "color_scheme": "scheme-af6f66e8-83fa-49ad-bee0-e64b28acc232"
           }
@@ -63,8 +72,8 @@
         "image_mWdTV8": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Rectangle_979_2x_3eb80a00-706b-4724-9bd3-11825918d676.png",
-            "image_text_head": "<strong>Trender<\/strong>",
+            "image": "shopify://shop_images/Rectangle_979_2x_3eb80a00-706b-4724-9bd3-11825918d676.png",
+            "image_text_head": "<strong>Trender</strong>",
             "image_text_body": "DE HOTTESTE STYLES LIGE NU",
             "color_scheme": "scheme-af6f66e8-83fa-49ad-bee0-e64b28acc232"
           }
@@ -72,8 +81,8 @@
         "image_Ww39fC": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Group_1110_2x_19e62fff-b7f9-442e-95c9-7e2d68eaaaba.png",
-            "image_text_head": "<strong>Gaver til ham og hende<\/strong>",
+            "image": "shopify://shop_images/Group_1110_2x_19e62fff-b7f9-442e-95c9-7e2d68eaaaba.png",
+            "image_text_head": "<strong>Gaver til ham og hende</strong>",
             "image_text_body": "BARE FORDI",
             "color_scheme": "scheme-4"
           }
@@ -85,7 +94,7 @@
         "image_Ww39fC"
       ],
       "settings": {
-        "heading": "<strong>Featured<\/strong>",
+        "heading": "<strong>Featured</strong>",
         "heading_size": "h1",
         "desktop_layout": "right",
         "mobile_layout": "column",
