@@ -1,0 +1,62 @@
+{
+  "name": "t:sections.footer.name",
+  "type": "footer",
+  "sections": {
+    "footer": {
+      "type": "footer",
+      "blocks": {
+        "text_i9XXNK": {
+          "type": "text",
+          "settings": {
+            "heading": "<strong>Company ApS<\/strong>",
+            "subtext": "<p>Storegade 1, 2200 København N<br\/>E: <a href=\"mailto:info@company.dk\">info@company.dk<br\/><\/a>T: <a href=\"tel:65%2065%2065%2065\">65 65 65 65<\/a><\/p>"
+          }
+        },
+        "link_list": {
+          "type": "link_list",
+          "settings": {
+            "heading": "<strong>Shop<\/strong>",
+            "menu": "footer-menu-1"
+          }
+        },
+        "link_list_VAX93Y": {
+          "type": "link_list",
+          "settings": {
+            "heading": "<strong>Hjælp<\/strong>",
+            "menu": "footer-menu-2"
+          }
+        },
+        "link_list_ghTXxz": {
+          "type": "link_list",
+          "settings": {
+            "heading": "<strong>Om Company ApS<\/strong>",
+            "menu": "footer-menu-3"
+          }
+        }
+      },
+      "block_order": [
+        "text_i9XXNK",
+        "link_list",
+        "link_list_VAX93Y",
+        "link_list_ghTXxz"
+      ],
+      "settings": {
+        "color_scheme": "scheme-2",
+        "newsletter_enable": false,
+        "newsletter_heading": "Subscribe to our emails",
+        "enable_follow_on_shop": true,
+        "show_social": true,
+        "enable_country_selector": true,
+        "enable_language_selector": true,
+        "payment_enable": true,
+        "show_policy": true,
+        "margin_top": 0,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "footer"
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page-radar",
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "margin_top": 28,
+        "margin_bottom": 28,
+        "height": 5
+      }
+    }
+  },
+  "order": [
+    "main"
+  ]
+}
