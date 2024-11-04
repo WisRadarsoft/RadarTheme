@@ -146,7 +146,7 @@
                 {%- endif -%}
               </div>
               <div class="d-inline mini-cart-menu">
-                <a href="{{ routes.cart_url }}"><i class="fa-solid fa-cart-shopping"></i></a>
+                <a href="{% if cart %}{{ routes.cart_url }}{% else %}#{% endif %}" class="header__icon header__icon--cart link focus-inset"><i class="fa-solid fa-cart-shopping"></i></a>
                 {% if cart.item_count > 0 %}
                   <span class="cart-count">{{ cart.item_count }}</span>
                 {% else  %}
