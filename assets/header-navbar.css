@@ -42,3 +42,10 @@
   top: 35px;
   text-align: center;
 }
+.header-navbar .header__icon .icon{
+  height: 1.5rem;
+  width: 1.5rem;
+}
+.header-navbar .header__icon.header__icon--account.link{
+  text-decoration: none;
+}
