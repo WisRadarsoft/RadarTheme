@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin language editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "settings_schema": {
     "global": {
@@ -395,15 +404,6 @@
         "padding_top": "Top padding",
         "padding_bottom": "Bottom padding"
       },
-      "margin": {
-        "section_margin_heading": "Section margin",
-        "margin_top": "Top margin",
-        "margin_bottom": "Bottom margin"
-      },
-      "height": {
-        "section_height_heading": "Height",
-        "height": "Height"
-      },
       "spacing": "Spacing",
       "colors": {
         "label": "Color scheme",
@@ -518,70 +518,6 @@
       },
       "presets": {
         "name": "Announcement bar"
-      }
-    },
-    "announcement-bar-rs": {
-      "name": "Announcement bar rs",
-      "settings": {
-        "auto_rotate": {
-          "label": "Auto-rotate announcements rs"
-        },
-        "change_slides_speed": {
-          "label": "Change every"
-        },
-        "header__1": {
-          "content": "Social media icons",
-          "info": "To display your social media accounts, link them in your [theme settings](\/editor?context=theme&category=social%20media)."
-        },
-        "header__2": {
-          "content": "Announcements radar"
-        },
-        "show_social": {
-          "label": "Show icons on desktop"
-        },
-        "header__3": {
-          "content": "Country\/region selector",
-          "info": "To add a country\/region, go to your [market settings.](\/admin\/settings\/markets)"
-        },
-        "enable_country_selector": {
-          "label": "Enable country\/region selector"
-        },
-        "header__4": {
-          "content": "Language selector",
-          "info": "To add a language, go to your [language settings.](\/admin\/settings\/languages)"
-        },
-        "enable_language_selector": {
-          "label": "Enable language selector"
-        }
-      },
-      "blocks": {
-        "announcement-bar-rs": {
-          "name": "Announcement bar rs",
-          "settings": {
-            "text": {
-              "label": "Text",
-              "default": "Welcome to our store"
-            },
-            "text_alignment": {
-              "label": "Text alignment",
-              "options__1": {
-                "label": "Left"
-              },
-              "options__2": {
-                "label": "Center"
-              },
-              "options__3": {
-                "label": "Right"
-              }
-            },
-            "link": {
-              "label": "Link"
-            }
-          }
-        }
-      },
-      "presets": {
-        "name": "Announcement bar rs"
       }
     },
     "apps": {
@@ -2023,9 +1959,6 @@
     },
     "main-page": {
       "name": "Page"
-    },
-    "main-page-radar": {
-      "name": "Page radar"
     },
     "main-password-footer": {
       "name": "Password footer"
@@ -3491,6 +3424,143 @@
       },
       "presets": {
         "name": "Collapsible content"
+      }
+    },
+    "header-navbar": {
+      "name": "Shop logo",
+      "logo": "Upload logo"
+    },
+    "main-404": {
+      "name": "Page 404",
+      "sub_title": "Sub title",
+      "title": "Title",
+      "button_label": "Button label"
+    },
+    "main-pageheader": {
+      "name": "Page header",
+      "enabled": "Show content page header",
+      "background": "Background color",
+      "text-left": "Content left area",
+      "text-right": "Content right area",
+      "fontcolor": "Font color"
+    },
+    "hero-image": {
+      "name": "Hero image",
+      "background": "Background image",
+      "title": "Title",
+      "content": "Content",
+      "fontcolor": "Font color",
+      "buttontext": "Button text",
+      "buttonurl": "Button URL",
+      "button-fontcolor": "Button font color",
+      "button-fontcolor-hover": "Button font color hover",
+      "button-backgroundcolor": "Button background color",
+      "spacing": "Spacing"
+    },
+    "featured": {
+      "name": "Featured"
+    },
+    "featured-1": {
+      "background": "Grid item 1 Background",
+      "title": "Grid item 1 Title",
+      "subtitle": "Grid item 1 Sub title",
+      "fontcolor": "Grid item 1 Font color"
+    },
+    "featured-2": {
+      "background": "Grid item 2 Background",
+      "title": "Grid item 2 Title",
+      "subtitle": "Grid item 2 Sub title",
+      "fontcolor": "Grid item 2 Font color"
+    },
+    "featured-3": {
+      "background": "Grid item 3 Background",
+      "title": "Grid item 3 Title",
+      "subtitle": "Grid item 3 Sub title",
+      "fontcolor": "Grid item 3 Font color"
+    },
+    "footer-settings": {
+      "name": "Footer"
+    },
+    "footer-company": {
+      "name": "Footer company",
+      "address": "Address",
+      "facebook": "Facebook URL",
+      "twitter": "Twitter URL",
+      "linkedin": "Linkedin URL",
+      "instagram": "Instagram URL"
+    },
+    "footer-copyright": {
+      "name": "Footer copyright",
+      "text": "Message",
+      "fontcolor": "Font color"
+    },
+    "inline_service": {
+      "name": "Inline service",
+      "settings": {
+        "bgcolor": "Background color",
+        "fontcolor": "Font color",
+        "padding_heading": "Padding",
+        "padding_top": "Top padding",
+        "padding_bottom": "Bottom padding"
+      },
+      "blocks": {
+        "name": "Column",
+        "settings": {
+          "image": {
+            "label": "Icon"
+          },
+          "text": {
+            "label": "Text",
+            "default": "<p>Follow your order with<\/p><p>tracking number<\/p>"
+          }
+        }
+      },
+      "presets": {
+        "name": "Inline service"
+      }
+    },
+    "newsletter02": {
+      "name": "Newsletter",
+      "settings": {
+        "background": "Background image",
+        "text": {
+          "label": "Content",
+          "default": "<p><strong>Tilmeld dig til vores nyhedsbrev og kom forrest i køen<\/strong><\/p><p>Få 10% rabat på din første ordre ved tilmelding!<\/p>"
+        },
+        "fontcolor": "Font color",
+        "padding_heading": "Padding",
+        "padding_top": "Top padding",
+        "padding_bottom": "Bottom padding"
+      }
+    },
+    "main_featured_collection": {
+      "name": "Collection",
+      "blocks": {
+        "name": "Collection blocks",
+        "settings": {
+          "title": {
+            "label": "Title",
+            "default": "Til ham",
+            "color": "Font color"
+          },
+          "image": {
+            "label": "Image"
+          },
+          "collection_text": {
+            "label": "Collection text",
+            "default": "Se alt",
+            "color": "Font color"
+          },
+          "collection_link": {
+            "label": "Collection link"
+          },
+          "collection": {
+            "label": "Collection"
+          }
+        }
+      },
+      "presets": {
+        "name": "Collection"
       }
     }
   }
