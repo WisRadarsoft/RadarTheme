@@ -1,0 +1,11 @@
+.main-collection-filter {
+  background-color: #F9F1E7;
+}
+.main-collection-filter .short-by label {
+  color: #000000;
+}
+.main-collection-filter .short-by #sort-by {
+  height: 55px;
+  color: #9F9F9F;
+  border: 0px;
+}

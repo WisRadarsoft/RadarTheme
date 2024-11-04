@@ -1,0 +1,19 @@
+.newsletter-02 .newsletter-form__field-wrapper .field::before, .newsletter-02 .newsletter-form__field-wrapper .field::after {
+  content: unset;
+}
+.newsletter-02 .newsletter-form__field-wrapper input {
+  width: 100%;
+  height: 44px;
+  background-color: transparent;
+  border: 0px;
+}
+.newsletter-02 .newsletter-form__field-wrapper button {
+  width: unset;
+  height: 44px;
+}
+.newsletter-02 .newsletter-form__field-wrapper button img {
+  width: 19px;
+}
+.newsletter-02 .newsletter-form__field-wrapper .form__message {
+  font-size: 1rem;
+}

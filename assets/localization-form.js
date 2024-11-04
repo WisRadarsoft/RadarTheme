@@ -47,7 +47,7 @@ if (!customElements.get('localization-form')) {
           this.elements.search.setAttribute('aria-activedescendant', '');
         }
         document.body.classList.remove('overflow-hidden-mobile');
-        document.querySelector('.menu-drawer').classList.remove('country-selector-open');
+        // document.querySelector('.menu-drawer').classList.remove('country-selector-open');
         this.header.preventHide = false;
       }
 
@@ -110,6 +110,7 @@ if (!customElements.get('localization-form')) {
       }
 
       openSelector() {
+        console.log(this.header.preventHide);
         this.elements.button.focus();
         this.elements.panel.toggleAttribute('hidden');
         this.elements.button.setAttribute(
@@ -125,7 +126,7 @@ if (!customElements.get('localization-form')) {
         if (this.hasAttribute('data-prevent-hide')) {
           this.header.preventHide = true;
         }
-        document.querySelector('.menu-drawer').classList.add('country-selector-open');
+        // document.querySelector('.menu-drawer').classList.add('country-selector-open');
       }
 
       closeSelector(event) {
