@@ -57,10 +57,10 @@
             "position": "left",
             "title": "Til ham",
             "title_color": "#000000",
-            "collection_text": "<p>SE ALT<\/p><p>TIL HAM<\/p>",
+            "collection_text": "<p>SE ALT</p><p>TIL HAM</p>",
             "collection_text_color": "#ffffff",
             "collection_link": "",
-            "collection": "",
+            "collection": "adult",
             "margin_bottom": 90
           }
         },
@@ -70,10 +70,10 @@
             "position": "right",
             "title": "Til hende",
             "title_color": "#000000",
-            "collection_text": "<p>SE ALT<\/p><p>Til hende<\/p>",
+            "collection_text": "<p>SE ALT</p><p>Til hende</p>",
             "collection_text_color": "#ffffff",
             "collection_link": "",
-            "collection": "",
+            "collection": "adult",
             "margin_bottom": 90
           }
         },
@@ -83,10 +83,10 @@
             "position": "left",
             "title": "Tilbehør",
             "title_color": "#000000",
-            "collection_text": "<p>SE ALT<\/p><p>Tilbehør<\/p>",
+            "collection_text": "<p>SE ALT</p><p>Tilbehør</p>",
             "collection_text_color": "#ffffff",
             "collection_link": "",
-            "collection": "",
+            "collection": "adult",
             "margin_bottom": 90
           }
         }
