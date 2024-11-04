@@ -8,17 +8,10 @@
  * ------------------------------------------------------------
  */
 {
-  "sections": {
-    "main": {
-      "type": "main-list-collections",
-      "settings": {
-        "title": "Collections",
-        "sort": "alphabetical",
-        "image_ratio": "square"
-      }
-    }
+  "parent": "header-group.json",
+  "context": {
+    "market": "เดนมาร์ก"
   },
-  "order": [
-    "main"
-  ]
+  "sections": {
+  }
 }

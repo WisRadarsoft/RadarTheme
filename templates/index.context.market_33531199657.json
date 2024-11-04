@@ -1,0 +1,44 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "parent": "index.json",
+  "context": {
+    "market": "เดนมาร์ก"
+  },
+  "sections": {
+    "main-featured-collection": {
+      "settings": {
+      },
+      "blocks": {
+        "main_featured_collection_1": {
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Group_1111_2x_1.png",
+            "collection": "automated-collection"
+          }
+        },
+        "main_featured_collection_2": {
+          "settings": {
+            "collection": "home"
+          }
+        },
+        "main_featured_collection_3": {
+          "settings": {
+            "collection": "hydrogen"
+          }
+        }
+      },
+      "block_order": [
+        "main_featured_collection_1",
+        "main_featured_collection_2",
+        "main_featured_collection_3"
+      ]
+    }
+  }
+}

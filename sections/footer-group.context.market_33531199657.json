@@ -8,17 +8,20 @@
  * ------------------------------------------------------------
  */
 {
+  "parent": "footer-group.json",
+  "context": {
+    "market": "เดนมาร์ก"
+  },
   "sections": {
-    "main": {
-      "type": "main-list-collections",
+    "footer-content": {
       "settings": {
-        "title": "Collections",
-        "sort": "alphabetical",
-        "image_ratio": "square"
+        "footer_social_facebook": "#",
+        "footer_social_twitter": "#",
+        "footer_social_linkedin": "#",
+        "footer_social_instagram": "#"
+      },
+      "blocks": {
       }
     }
-  },
-  "order": [
-    "main"
-  ]
+  }
 }
