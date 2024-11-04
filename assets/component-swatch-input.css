@@ -15,19 +15,22 @@
 }
 
 .swatch-input__input + .swatch-input__label.swatch-input__label--square {
-  --swatch-input--border-radius: 0.2rem;
+  --swatch-input--border-radius: 0rem;
+  border: 1px solid #a9a9a9;
 }
 
 /* Active state */
 .swatch-input__input:active + .swatch-input__label,
 .swatch-input__input:checked + .swatch-input__label {
-  outline: 0.1rem solid rgb(var(--color-foreground));
+  /* outline: 0.1rem solid rgb(var(--color-foreground)); */
+  border: 1px solid rgb(var(--color-foreground));
 }
 
 /* Hover state */
 .swatch-input__input + .swatch-input__label:hover,
 .swatch-input__input:hover + .swatch-input__label {
-  outline: 0.2rem solid rgba(var(--color-foreground), 0.4);
+  /*outline: 0.2rem solid rgba(var(--color-foreground), 0.4);*/
+  border: 1px solid rgba(var(--color-foreground), 0.4);
 }
 
 /* Focus visible */

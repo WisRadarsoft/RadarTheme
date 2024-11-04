@@ -1,0 +1,8 @@
+.footer-copyright {
+  font-size: 1.3rem;
+  color: #9f9f9f;
+  border-top: 1px solid #f0f0f0;
+}
+.footer-copyright .payment-logo img {
+  height: 24px;
+}

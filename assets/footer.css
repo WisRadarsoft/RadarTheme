@@ -1,0 +1,41 @@
+footer .footer-column {
+  padding: 1.5rem 0px 3rem 0px;
+}
+footer .footer-column .footer-column-title {
+  margin-bottom: 15px;
+  color: #374151;
+  font-weight: 500;
+}
+footer .footer-column .address {
+  font-size: 0.875rem;
+  color: #a9a9a9;
+  margin-bottom: 20px;
+}
+footer .footer-column .social-link a {
+  color: #a9a9a9;
+  margin-right: 20px;
+}
+footer .footer-column p {
+  margin-bottom: 0px;
+  color: #a9a9a9;
+}
+footer .footer-column .footer-nav-link {
+  margin: 0;
+  padding: 0;
+}
+footer .footer-column .footer-nav-link li {
+  list-style: none;
+}
+footer .footer-column .footer-nav-link li a {
+  font-size: 0.875rem;
+  color: #a9a9a9;
+  text-decoration: none;
+}
+footer .footer-copyright {
+  font-size: 0.75rem;
+  color: #9f9f9f;
+  border-top: 1px solid #f0f0f0;
+}
+footer .footer-copyright .payment-logo img {
+  height: 24px;
+}
