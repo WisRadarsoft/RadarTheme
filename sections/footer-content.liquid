@@ -42,7 +42,7 @@
         <div class="col-md-2 column-2">
           <div class="footer-column-title">Shop</div>
           <ul class="footer-nav-link">
-            {% for link in linklists['footer-menu'].links %}
+            {% for link in linklists.footer.links %}
               <li>
                 <a
                   href="{{ link.url }}"
@@ -56,7 +56,7 @@
         <div class="col-md-2 column-3">
           <div class="footer-column-title">Hjælp</div>
           <ul class="footer-nav-link">
-            {% for link in linklists['footer-menu-help'].links %}
+            {% for link in linklists['footer-menu-2'].links %}
               <li>
                 <a
                   href="{{ link.url }}"
@@ -70,7 +70,7 @@
         <div class="col-md-2 column-4">
           <div class="footer-column-title">Om Company ApS</div>
           <ul class="footer-nav-link">
-            {% for link in linklists['footer-menu-om-cpmpany'].links %}
+            {% for link in linklists['footer-menu-3'].links %}
               <li>
                 <a
                   href="{{ link.url }}"
