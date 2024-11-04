@@ -111,7 +111,13 @@
                 <a href="#"><i class="fa-regular fa-user"></i></a>
               </div>
               <div class="d-inline">
-                <a href="#"><i class="fa-solid fa-cart-shopping"></i><span>{{ cart.item_count }}</span></a>
+                <a href="#"><i class="fa-solid fa-cart-shopping"></i>
+                  {% if cart.item_count > 0 %}
+                    <span class="cart-count">{{ cart.item_count }}</span>
+                  {% else  %}
+                    <span class="cart-count">0</span>
+                  {% endif %}
+                </a>
               </div>
             </div>
           </div>
