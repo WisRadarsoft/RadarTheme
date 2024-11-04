@@ -14,11 +14,18 @@
     "main-pageheader": {
       "type": "main-pageheader",
       "settings": {
+        "main_pageheader_enabled": true,
+        "main_pageheader_background": "#67796d",
+        "main_pageheader_textleft": "<strong>Black Friday</strong> 50% på udvalgte styles",
+        "main_pageheader_textright": "Brug for hjælp? Ring <strong>65 65 65 65</strong>",
+        "main_pageheader_fontcolor": "#ffffff"
       }
     },
     "header-navbar": {
       "type": "header-navbar",
       "settings": {
+        "enable_country_selector": false,
+        "enable_language_selector": true
       }
     }
   },
