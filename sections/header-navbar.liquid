@@ -104,7 +104,7 @@
                   {%- endif -%}
                 </div>
               {%- endif -%}
-              <div class="d-inline">
+              <div class="d-inline top-search-menu">
                 {% render 'header-search', input_id: 'Search-In-Modal' %}  
                 <div class="desktop-localization-wrapper">
                   {%- if section.settings.enable_country_selector and localization.available_countries.size > 1 -%}
@@ -119,7 +119,7 @@
                   {% endif %}
                 </div>
               </div>
-              <div class="d-inline">
+              <div class="d-inline customer-account-menu">
                 {%- if shop.customer_accounts_enabled -%}
                   <a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}" class="header__icon header__icon--account link focus-inset{% if section.settings.menu != blank %} small-hide{% endif %}">
                     {%- if section.settings.enable_customer_avatar -%}
@@ -145,7 +145,7 @@
                   </a>
                 {%- endif -%}
               </div>
-              <div class="d-inline">
+              <div class="d-inline mini-cart-menu">
                 <a href="{{ routes.cart_url }}"><i class="fa-solid fa-cart-shopping"></i></a>
                 {% if cart.item_count > 0 %}
                   <span class="cart-count">{{ cart.item_count }}</span>
