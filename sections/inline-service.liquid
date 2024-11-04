@@ -1,0 +1,126 @@
+{%- if section.blocks.size > 0 -%}
+  {%- style -%}
+    .inline-service {
+        color: {{ section.settings.fontcolor }};
+        background-color: {{ section.settings.bgcolor }};
+    }
+    .inline-service p {
+        margin: 0px;
+    }
+    .inline-service img {
+        height: 54px;
+    }
+    .inline-service-column{
+        padding-top: {{ section.settings.padding_top }}px;
+        padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  {%- endstyle -%}
+  <div class="inline-service">
+    <div class="container">
+      <div class="row">
+        {%- for block in section.blocks -%}
+          {% if section.settings.image == blank %}
+            {% if forloop.index == 1 %}
+              {% assign image_icon = 'placeholder_3_2x.png' | asset_img_url: 'master' %}
+            {% elsif forloop.index == 2 %}
+              {% assign image_icon = 'return_1_2x.png' | asset_img_url: 'master' %}
+            {% else %}
+              {% assign image_icon = 'shipping-fast.png' | asset_img_url: 'master' %}
+            {% endif %}
+          {% else %}
+            {% assign image_icon = section.settings.image | img_url: 'master' %}
+          {% endif %}
+          <div class="inline-service-column col-md-4 align-self-center">
+            <div class="d-flex justify-content-center align-items-center">
+              <div class="me-4"><img src="{{ image_icon }}"></div>
+              <div>{{ block.settings.text }}</div>
+            </div>
+          </div>
+        {%- endfor -%}
+      </div>
+    </div>
+  </div>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "t:sections.inline_service.name",
+  "class": "inline-service-section",
+  "enabled_on": {
+    "groups": ["footer"]
+  },
+  "settings": [
+    {
+      "type": "color",
+      "id": "bgcolor",
+      "label": "t:sections.inline_service.settings.bgcolor",
+      "default": "#f9f9f9"
+    },
+    {
+      "type": "color",
+      "id": "fontcolor",
+      "label": "t:sections.inline_service.settings.fontcolor",
+      "default": "#000000"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.inline_service.settings.padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "unit": "px",
+      "label": "t:sections.inline_service.settings.padding_top",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "unit": "px",
+      "label": "t:sections.inline_service.settings.padding_bottom",
+      "default": 20
+    }
+  ],
+  "blocks": [
+    {
+      "type": "inline_service",
+      "name": "t:sections.inline_service.blocks.name",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "t:sections.inline_service.blocks.settings.image.label"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "t:sections.inline_service.blocks.settings.text.label",
+          "default": "t:sections.inline_service.blocks.settings.text.default"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.inline_service.presets.name",
+      "blocks": [
+        {
+          "type": "inline_service"
+        },
+        {
+          "type": "inline_service"
+        },
+        {
+          "type": "inline_service"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

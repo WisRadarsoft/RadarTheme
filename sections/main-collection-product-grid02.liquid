@@ -1,0 +1,44 @@
+<script src="{{ 'product-card.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'add-to-cart-button.js' | asset_url }}" defer="defer"></script>
+{{ 'product-card.css' | asset_url | stylesheet_tag }}
+{{ 'component-price.css' | asset_url | stylesheet_tag }}
+{{ 'main-collection-products.css' | asset_url | stylesheet_tag }}
+
+<div class="container">
+  {%- paginate collection.products by 12 -%}
+    <div class="row">
+      <div class="col-md-3">
+        {{ 'component-facets.css' | asset_url | stylesheet_tag }}
+        <script src="{{ 'facets.js' | asset_url }}" defer="defer"></script>
+        {% render 'facets',
+          results: collection,
+          enable_filtering: true,
+          enable_sorting: false,
+          filter_type: 'vertical',
+          paginate: paginate
+        %}
+      </div>
+
+      <div id="ProductGridContainer" class="col-md-9">
+        <div class="main-collection collection">
+          {% render 'collection-sort' %}
+
+          <div id="product-grid" data-id="{{ section.id }}" class="row row-cols-1 row-cols-lg-3 g-lg-4">
+            {%- for product in collection.products -%}
+              <div class="collection-product col">
+                {% render 'card-product02', card_product: product %}
+              </div>
+            {% endfor %}
+          </div>
+          <div class="row mt-5">
+            <div class="col">
+              <div class="paginate text-center">
+                {{ paginate | default_pagination }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  {%- endpaginate -%}
+</div>

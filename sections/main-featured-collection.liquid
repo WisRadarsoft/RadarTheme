@@ -1,0 +1,156 @@
+{%- if section.blocks.size > 0 -%}
+  <script src="{{ 'product-card.js' | asset_url }}" defer="defer"></script>
+  <script src="{{ 'add-to-cart-button.js' | asset_url }}" defer="defer"></script>
+  {{ 'product-card.css' | asset_url | stylesheet_tag }}
+  {{ 'component-price.css' | asset_url | stylesheet_tag }}
+  {{ 'main-featured-collection.css' | asset_url | stylesheet_tag }}
+  {%- for block in section.blocks -%}
+    {%- style -%}
+      #{{ section.id }}-{{ forloop.index }}{
+        margin-bottom: {{ block.settings.margin_bottom }}px;
+      }
+        #{{ section.id }}-{{ forloop.index }} .featured-collection-header{
+          color: {{ block.settings.title_color }};
+        }
+        #{{ section.id }}-{{ forloop.index }} .collection-image a,
+        #{{ section.id }}-{{ forloop.index }} .collection-image a:hover{
+          color: {{ block.settings.collection_text_color }};
+        }
+    {%- endstyle -%}
+    {% if forloop.index == 1 %}
+      {% assign image = 'Group_1111_2x_1.png' | asset_img_url: 'master' %}
+    {% elsif forloop.index == 2 %}
+      {% assign image = 'Rectangle_1045_2x.png' | asset_img_url: 'master' %}
+    {% else %}
+      {% assign image = 'Group_1147_1.jpg' | asset_img_url: 'master' %}
+    {% endif %}
+
+    {% if block.settings.image != blank %}
+      {% assign image = block.settings.image | img_url: 'master' %}
+    {% endif %}
+
+    {% if block.settings.position == 'left' %}
+      {% assign col_order = 'order-1' %}
+    {% else %}
+      {% assign col_order = 'order-2' %}
+    {% endif %}
+    <div id="{{ section.id }}-{{ forloop.index }}" class="main-featured-collection">
+      <h2 class="featured-collection-header text-center">{{ block.settings.title }}</h2>
+      <div class="container">
+        <div class="row row-cols-1 row-cols-lg-5 g-lg-4">
+          <div class="collection-image col {{ col_order }}">
+            <a href="{{ block.settings.collection_link | default: '#' }}">
+              <img src="{{ image }}">
+              <span class="collection-label">{{ block.settings.collection_text }}</span>
+            </a>
+          </div>
+          {%- for product in block.settings.collection.products limit: 4 -%}
+            <div class="collection-product col order-1">
+              {% render 'card-product02', card_product: product %}
+            </div>
+          {%- endfor -%}
+        </div>
+      </div>
+    </div>
+  {%- endfor -%}
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "t:sections.main_featured_collection.name",
+  "class": "main-featured-collection-section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [],
+  "blocks": [
+    {
+      "type": "main_featured_collection",
+      "name": "t:sections.main_featured_collection.blocks.name",
+      "settings": [
+        {
+          "type": "select",
+          "id": "position",
+          "label": "Collection image posigion",
+          "options": [
+            {
+              "value": "left",
+              "label": "Left"
+            },
+            {
+              "value": "right",
+              "label": "Right"
+            }
+          ],
+          "default": "left"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "t:sections.main_featured_collection.blocks.settings.title.label",
+          "default": "t:sections.main_featured_collection.blocks.settings.title.default"
+        },
+        {
+          "type": "color",
+          "id": "title_color",
+          "label": "t:sections.main_featured_collection.blocks.settings.title.color",
+          "default": "#000000"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "t:sections.main_featured_collection.blocks.settings.image.label"
+        },
+        {
+          "type": "richtext",
+          "id": "collection_text",
+          "label": "t:sections.main_featured_collection.blocks.settings.collection_text.label",
+          "default": "t:sections.main_featured_collection.blocks.settings.collection_text.default"
+        },
+        {
+          "type": "color",
+          "id": "collection_text_color",
+          "label": "t:sections.main_featured_collection.blocks.settings.collection_text.color",
+          "default": "#ffffff"
+        },
+        {
+          "type": "url",
+          "id": "collection_link",
+          "label": "t:sections.main_featured_collection.blocks.settings.collection_link.label"
+        },
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "t:sections.main_featured_collection.blocks.settings.collection.label"
+        },
+        {
+          "type": "range",
+          "id": "margin_bottom",
+          "min": 10,
+          "max": 100,
+          "step": 1,
+          "unit": "px",
+          "label": "Margin bottom",
+          "default": 30
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "t:sections.main_featured_collection.presets.name",
+      "blocks": [
+        {
+          "type": "main_featured_collection"
+        },
+        {
+          "type": "main_featured_collection"
+        },
+        {
+          "type": "main_featured_collection"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

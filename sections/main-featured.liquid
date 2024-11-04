@@ -1,0 +1,166 @@
+{{ 'main-featured.css' | asset_url | stylesheet_tag }}
+
+{% if section.settings.main_featured_1_background %}
+  {% assign main_featured_1_background = section.settings.main_featured_1_background | img_url: 'master' %}
+{% else %}
+  {% assign main_featured_1_background = 'Rectangle_978_2x_7.png' | asset_img_url: 'master' %}
+{% endif %}
+
+{% if section.settings.main_featured_2_background %}
+  {% assign main_featured_2_background = section.settings.main_featured_1_background | img_url: 'master' %}
+{% else %}
+  {% assign main_featured_2_background = 'Group_1110_2x_5.png' | asset_img_url: 'master' %}
+{% endif %}
+
+{% if section.settings.main_featured_3_background %}
+  {% assign main_featured_3_background = section.settings.main_featured_1_background | img_url: 'master' %}
+{% else %}
+  {% assign main_featured_3_background = 'Rectangle_979_2x_5.png' | asset_img_url: 'master' %}
+{% endif %}
+
+<style>
+  .featured-grid-item:nth-child(1){
+      color: {{ section.settings.main_featured_1_fontcolor }};
+      background-image: url('{{ main_featured_1_background }}');
+  }
+  .featured-grid-item:nth-child(1) h1{
+      color: {{ section.settings.main_featured_1_fontcolor }};
+  }
+  .featured-grid-item:nth-child(2){
+      color: {{ section.settings.main_featured_2_fontcolor }};
+      background-image: url('{{ main_featured_2_background }}');
+  }
+  .featured-grid-item:nth-child(2) h1{
+      color: {{ section.settings.main_featured_2_fontcolor }};
+  }
+  .featured-grid-item:nth-child(3){
+      color: {{ section.settings.main_featured_3_fontcolor }};
+      background-image: url('{{ main_featured_3_background }}');
+  }
+  .featured-grid-item:nth-child(3) h1{
+      color: {{ section.settings.main_featured_3_fontcolor }};
+  }
+</style>
+
+<div class="featured-wrapper">
+  <div class="container mb-3">
+    <h1 class="text-center">Featured</h1>
+  </div>
+  <div class="container featured">
+    <div class="featured-grid-item">
+      <a href="#">
+        <div class="featured-grid-wrapper">
+          <div class="featured-grid-content d-flex justify-content-center align-items-center text-center">
+            <div>
+              <h1>{{ section.settings.main_featured_1_title }}</h1>
+              <p>{{ section.settings.main_featured_1_subtitle }}</p>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="featured-grid-item">
+      <a href="#">
+        <div class="featured-grid-wrapper">
+          <div class="featured-grid-content d-flex justify-content-center align-items-center text-center">
+            <div>
+              <h1>{{ section.settings.main_featured_2_title }}</h1>
+              <p>{{ section.settings.main_featured_2_subtitle }}</p>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+    <div class="featured-grid-item">
+      <a href="#">
+        <div class="featured-grid-wrapper">
+          <div class="featured-grid-content d-flex justify-content-center align-items-center text-center">
+            <div>
+              <h1>{{ section.settings.main_featured_3_title }}</h1>
+              <p>{{ section.settings.main_featured_3_subtitle }}</p>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.featured.name",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "main_featured_1_background",
+      "label": "t:sections.featured-1.background"
+    },
+    {
+      "type": "text",
+      "id": "main_featured_1_title",
+      "label": "t:sections.featured-1.title",
+      "default": "Nye styles"
+    },
+    {
+      "type": "text",
+      "id": "main_featured_1_subtitle",
+      "label": "t:sections.featured-1.subtitle",
+      "default": "VINTEREN ER PÅ VEJ"
+    },
+    {
+      "type": "color",
+      "id": "main_featured_1_fontcolor",
+      "label": "t:sections.featured-1.fontcolor",
+      "default": "#000000"
+    },
+
+    {
+      "type": "image_picker",
+      "id": "main_featured_2_background",
+      "label": "t:sections.featured-2.background"
+    },
+    {
+      "type": "text",
+      "id": "main_featured_2_title",
+      "label": "t:sections.featured-2.title",
+      "default": "Gaver til ham og hende"
+    },
+    {
+      "type": "text",
+      "id": "main_featured_2_subtitle",
+      "label": "t:sections.featured-2.subtitle",
+      "default": "BARE FORDI"
+    },
+    {
+      "type": "color",
+      "id": "main_featured_2_fontcolor",
+      "label": "t:sections.featured-2.fontcolor",
+      "default": "#ecf0f1"
+    },
+
+    {
+      "type": "image_picker",
+      "id": "main_featured_3_background",
+      "label": "t:sections.featured-3.background"
+    },
+    {
+      "type": "text",
+      "id": "main_featured_3_title",
+      "label": "t:sections.featured-3.title",
+      "default": "Trender"
+    },
+    {
+      "type": "text",
+      "id": "main_featured_3_subtitle",
+      "label": "t:sections.featured-3.subtitle",
+      "default": "DE HOTTESTE STYLES LIGE NU"
+    },
+    {
+      "type": "color",
+      "id": "main_featured_3_fontcolor",
+      "label": "t:sections.featured-3.fontcolor",
+      "default": "#000000"
+    }
+  ]
+}
+{% endschema %}
