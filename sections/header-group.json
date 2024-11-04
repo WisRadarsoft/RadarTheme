@@ -1,39 +1,36 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "name": "t:sections.header.name",
   "type": "header",
   "sections": {
-    "top_page_Yhzfmg": {
-      "type": "top-page",
+    "main-pageheader": {
+      "type": "main-pageheader",
       "settings": {
-        "color_scheme": "scheme-5",
-        "text-left": "<strong>Black Friday 50%<\/strong> på udvalgte styles",
-        "text-right": "Brug for hjælp? Ring <strong>65 65 65 65<\/strong>",
-        "padding_top": 30,
-        "padding_bottom": 30
+        "main_pageheader_enabled": true,
+        "main_pageheader_background": "#67796d",
+        "main_pageheader_textleft": "<strong>Black Friday<\/strong> 50% på udvalgte styles",
+        "main_pageheader_textright": "Brug for hjælp? Ring <strong>65 65 65 65<\/strong>",
+        "main_pageheader_fontcolor": "#ffffff"
       }
     },
-    "header": {
-      "type": "header",
+    "header-navbar": {
+      "type": "header-navbar",
       "settings": {
-        "logo_position": "middle-left",
-        "menu": "categories-menu",
-        "menu_type_desktop": "mega",
-        "sticky_header_type": "reduce-logo-size",
-        "show_line_separator": true,
-        "color_scheme": "scheme-2",
-        "menu_color_scheme": "scheme-2",
         "enable_country_selector": false,
-        "enable_language_selector": true,
-        "enable_customer_avatar": true,
-        "mobile_logo_position": "center",
-        "margin_bottom": 0,
-        "padding_top": 32,
-        "padding_bottom": 32
+        "enable_language_selector": true
       }
     }
   },
   "order": [
-    "top_page_Yhzfmg",
-    "header"
+    "main-pageheader",
+    "header-navbar"
   ]
 }
