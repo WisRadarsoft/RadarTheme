@@ -75,6 +75,21 @@
 
             <!-- Menu icon -->
             <div class="menu-icon header__icons d-flex align-items-center">
+              <div class="d-inline top-search-menu">
+                {% render 'header-search', input_id: 'Search-In-Modal' %}  
+                <div class="desktop-localization-wrapper">
+                  {%- if section.settings.enable_country_selector and localization.available_countries.size > 1 -%}
+                    <localization-form class="small-hide medium-hide" data-prevent-hide>
+                      {%- form 'localization', id: 'HeaderCountryForm', class: 'localization-form' -%}
+                        <div>
+                          <h2 class="visually-hidden" id="HeaderCountryLabel">{{ 'localization.country_label' | t }}</h2>
+                          {%- render 'country-localization', localPosition: 'HeaderCountry' -%}
+                        </div>
+                      {%- endform -%}
+                    </localization-form>
+                  {% endif %}
+                </div>
+              </div>
               {% if section.settings.enable_country_selector or section.settings.enable_language_selector %}
                 <div class="d-inline {% if section.settings.enable_country_selector or section.settings.enable_language_selector %} header__icons--localization header-localization{% endif %}">
                   {%- if section.settings.enable_country_selector and localization.available_countries.size > 1 -%}
@@ -104,21 +119,6 @@
                   {%- endif -%}
                 </div>
               {%- endif -%}
-              <div class="d-inline top-search-menu">
-                {% render 'header-search', input_id: 'Search-In-Modal' %}  
-                <div class="desktop-localization-wrapper">
-                  {%- if section.settings.enable_country_selector and localization.available_countries.size > 1 -%}
-                    <localization-form class="small-hide medium-hide" data-prevent-hide>
-                      {%- form 'localization', id: 'HeaderCountryForm', class: 'localization-form' -%}
-                        <div>
-                          <h2 class="visually-hidden" id="HeaderCountryLabel">{{ 'localization.country_label' | t }}</h2>
-                          {%- render 'country-localization', localPosition: 'HeaderCountry' -%}
-                        </div>
-                      {%- endform -%}
-                    </localization-form>
-                  {% endif %}
-                </div>
-              </div>
               <div class="d-inline customer-account-menu">
                 {%- if shop.customer_accounts_enabled -%}
                   <a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}" class="header__icon header__icon--account link focus-inset{% if section.settings.menu != blank %} small-hide{% endif %}">
