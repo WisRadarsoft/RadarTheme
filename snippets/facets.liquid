@@ -12,9 +12,11 @@
   {% render 'facets', results: collection, enable_filtering: true, enable_sorting: true, filter_type: 'vertical', paginate: paginate %}
 {% endcomment %}
 
-{{ 'component-show-more.css' | asset_url | stylesheet_tag }}
-{{ 'component-swatch-input.css' | asset_url | stylesheet_tag }}
-{{ 'component-swatch.css' | asset_url | stylesheet_tag }}
+{% comment %}
+  {{ 'component-show-more.css' | asset_url | stylesheet_tag }}
+  {{ 'component-swatch-input.css' | asset_url | stylesheet_tag }}
+  {{ 'component-swatch.css' | asset_url | stylesheet_tag }}
+{% endcomment %}
 
 {%- liquid
   assign sort_by = results.sort_by | default: results.default_sort_by
@@ -125,7 +127,7 @@
 
               {% case filter.type %}
                 {% when 'boolean', 'list' %}
-                  <details
+                  <div
                     id="Details-{{ filter.param_name | escape }}-{{ section.id }}"
                     class="{% if filter_type == 'horizontal' %}disclosure-has-popup facets__disclosure{% else %} facets__disclosure-vertical{% endif %} js-filter"
                     data-index="{{ forloop.index }}"
@@ -294,9 +296,9 @@
                         </show-more-button>
                       {%- endif %}
                     </div>
-                  </details>
+                  </div>
                 {% when 'price_range' %}
-                  <details
+                  <div
                     id="Details-{{ filter.param_name | escape }}-{{ section.id }}"
                     class="{% if filter_type == 'horizontal' %}disclosure-has-popup facets__disclosure{% else %} facets__disclosure-vertical{% endif %} js-filter"
                     data-index="{{ forloop.index }}"
@@ -331,7 +333,7 @@
                         {% render 'price-facet', filter: filter, id_prefix: 'Filter-', filter_type: filter_type %}
                       </price-range>
                     </div>
-                  </details>
+                  </div>
               {% endcase %}
             {%- endfor -%}
           </div>
