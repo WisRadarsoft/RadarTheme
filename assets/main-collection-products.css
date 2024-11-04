@@ -1,0 +1,20 @@
+.main-collection .paginate span {
+  margin: 0px 0.25rem;
+  display: inline-block;
+}
+.main-collection .paginate span a {
+  color: #000000;
+  padding: 9px 17px;
+  display: block;
+  border: 1px solid #a9a9a9;
+}
+.main-collection .paginate span a:hover {
+  color: #FFFFFF;
+  background-color: #000000;
+}
+.main-collection .paginate span.current {
+  color: #FFFFFF;
+  padding: 9px 17px;
+  background-color: #000000;
+  border: 1px solid #a9a9a9;
+}
