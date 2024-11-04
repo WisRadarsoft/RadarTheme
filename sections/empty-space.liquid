@@ -1,0 +1,22 @@
+<div class="container d-block" style="height: {{ section.settings.height }}px"></div>
+{% schema %}
+{
+  "name": "Empty space",
+  "class": "empty-space-section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "range",
+      "id": "height",
+      "min": 10,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Empty space height",
+      "default": 30
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,61 @@
+{{ 'main-pageheader.css' | asset_url | stylesheet_tag }}
+
+{% if section.settings.main_pageheader_enabled %}
+  <style>
+    .pageheader{
+        color: {{ section.settings.main_pageheader_fontcolor }};
+        background: {{ section.settings.main_pageheader_background }};
+    }
+  </style>
+
+  <div class="pageheader d-flex align-items-center">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-12 col-md-6 text-sm-center text-md-start">
+          {{ section.settings.main_pageheader_textleft }}
+        </div>
+        <div class="col-12 col-md-6 text-sm-center text-md-end">
+          {{ section.settings.main_pageheader_textright }}
+        </div>
+      </div>
+    </div>
+  </div>
+{% endif %}
+
+{% schema %}
+{
+  "name": "t:sections.main-pageheader.name",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "main_pageheader_enabled",
+      "label": "t:sections.main-pageheader.enabled",
+      "default": true
+    },
+    {
+      "type": "color",
+      "id": "main_pageheader_background",
+      "label": "t:sections.main-pageheader.background",
+      "default": "#67796d"
+    },
+    {
+      "type": "text",
+      "id": "main_pageheader_textleft",
+      "label": "t:sections.main-pageheader.text-left",
+      "default": "<strong>Black Friday</strong> 50% på udvalgte styles"
+    },
+    {
+      "type": "text",
+      "id": "main_pageheader_textright",
+      "label": "t:sections.main-pageheader.text-right",
+      "default": "Brug for hjælp? Ring <strong>65 65 65 65</strong>"
+    },
+    {
+      "type": "color",
+      "id": "main_pageheader_fontcolor",
+      "label": "t:sections.main-pageheader.fontcolor",
+      "default": "#ffffff"
+    }
+  ]
+}
+{% endschema %}

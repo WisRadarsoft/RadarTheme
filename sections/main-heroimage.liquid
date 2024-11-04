@@ -1,0 +1,113 @@
+{{ 'main-heroimage.css' | asset_url | stylesheet_tag }}
+
+{% if section.settings.hero_image_background %}
+  {% assign hero_image_background_url = section.settings.hero_image_background | img_url: 'master' %}
+{% else %}
+  {% assign hero_image_background_url = 'Rectangle.png' | asset_img_url: 'master' %}
+{% endif %}
+
+<style>
+  .main-heroimage{
+      color: {{ section.settings.hero_image_fontcolor }};
+      background-image: url('{{ hero_image_background_url }}');
+  }
+  .main-heroimage h1{
+      color: {{ section.settings.hero_image_fontcolor }};
+  }
+  .main-heroimage .button{
+      color: {{ section.settings.hero_image_button_fontcolor }};
+      background-color: {{ section.settings.hero_image_button_backgroundcolor }};
+      border:1px solid {{ section.settings.hero_image_button_backgroundcolor }};
+  }
+  .main-heroimage .button:hover{
+      color: {{ section.settings.hero_image_button_fontcolor_hover }};
+      background: transparent;
+      border:1px solid {{ section.settings.hero_image_button_fontcolor_hover }};
+  }
+</style>
+
+<div class="main-heroimage container-fluid d-flex justify-content-center align-items-center">
+  <div class="container">
+    <div class="main-heroimage-content text-center">
+      <h1>{{ section.settings.hero_image_title }}</h1>
+      {% if section.settings.hero_image_content != blank %}
+        {{ section.settings.hero_image_content }}
+      {% else %}
+        <p>
+          Se de mange nedsatte varer og køb løs hele ugen!<br>
+          *Brug koden BLACK2024
+        </p>
+      {% endif %}
+      <a href="{{ section.settings.hero_image_button_url | default: '#' }}" class="button">
+        {{- section.settings.hero_image_button_text -}}
+      </a>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.hero-image.name",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "hero_image_background",
+      "label": "t:sections.hero-image.background"
+    },
+    {
+      "type": "text",
+      "id": "hero_image_title",
+      "label": "t:sections.hero-image.title",
+      "default": "Black Friday 50% rabat på udvalgte styles"
+    },
+    {
+      "type": "richtext",
+      "id": "hero_image_content",
+      "label": "t:sections.hero-image.content"
+    },
+    {
+      "type": "color",
+      "id": "hero_image_fontcolor",
+      "label": "t:sections.hero-image.fontcolor",
+      "default": "#ffffff"
+    },
+    {
+      "type": "text",
+      "id": "hero_image_button_text",
+      "label": "t:sections.hero-image.buttontext",
+      "default": "SE NEDSATTE VARER"
+    },
+    {
+      "type": "url",
+      "id": "hero_image_button_url",
+      "label": "t:sections.hero-image.buttonurl"
+    },
+    {
+      "type": "color",
+      "id": "hero_image_button_fontcolor",
+      "label": "t:sections.hero-image.button-fontcolor",
+      "default": "#ffffff"
+    },
+    {
+      "type": "color",
+      "id": "hero_image_button_fontcolor_hover",
+      "label": "t:sections.hero-image.button-fontcolor-hover",
+      "default": "#67796d"
+    },
+    {
+      "type": "color",
+      "id": "hero_image_button_backgroundcolor",
+      "label": "t:sections.hero-image.button-backgroundcolor",
+      "default": "#67796d"
+    }
+    /*
+        {
+            "type": "color",
+            "id": "hero_image_button_backgroundcolor_hover",
+            "label": "t:settings_schema.sections.hero-image.backgroundcolor-hover",
+            "default": "#ffffff"
+        },
+        */
+  ]
+}
+{% endschema %}

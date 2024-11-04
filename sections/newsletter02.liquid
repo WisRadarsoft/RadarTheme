@@ -1,0 +1,161 @@
+{{ 'newsletter02-section.css' | asset_url | stylesheet_tag }}
+
+{% if section.settings.background %}
+  {% assign newsletter_background = section.settings.background | img_url: 'master' %}
+{% else %}
+  {% assign newsletter_background = 'Group_1114.png' | asset_img_url: 'master' %}
+{% endif %}
+{%- style -%}
+  .newsletter-02{
+        color: {{ section.settings.fontcolor }};
+        padding-top: {{ section.settings.padding_top }}px;
+        padding-bottom: {{ section.settings.padding_bottom }}px;
+        background-image: url('{{ newsletter_background }}');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+  }
+  .newsletter-02 .content p{
+        margin-bottom: 0px;
+  }
+  .newsletter-02 .field{
+        border-bottom: 1px solid {{ section.settings.fontcolor }};
+  }
+  .newsletter-02 .field input{
+        color: {{ section.settings.fontcolor }};
+  }
+  .newsletter-02 .field input::placeholder {
+        color: {{ section.settings.fontcolor }};
+        opacity: 1;
+  }
+{%- endstyle -%}
+<div class="newsletter newsletter-02 container-fluid">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-md-6 content">
+        {{ section.settings.text }}
+      </div>
+      <div class="col-md-6 form">
+        {% form 'customer', class: 'newsletter-form' %}
+          <input type="hidden" name="contact[tags]" value="newsletter">
+          <div
+            class="newsletter-form__field-wrapper{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %}"
+            {% if settings.animations_reveal_on_scroll %}
+              data-cascade
+              style="--animation-order: {{ forloop.index }};"
+            {% endif %}
+          >
+            <div class="field">
+              <input
+                id="NewsletterForm--{{ section.id }}"
+                type="email"
+                name="contact[email]"
+                class=""
+                value="{{ form.email }}"
+                aria-required="true"
+                autocorrect="off"
+                autocapitalize="off"
+                autocomplete="email"
+                {% if form.errors %}
+                  autofocus
+                  aria-invalid="true"
+                  aria-describedby="Newsletter-error--{{ section.id }}"
+                {% elsif form.posted_successfully? %}
+                  aria-describedby="Newsletter-success--{{ section.id }}"
+                {% endif %}
+                placeholder="{{ 'newsletter.label' | t }}"
+                required
+              >
+              <button
+                type="submit"
+                class="newsletter-form__button field__button"
+                name="commit"
+                id="Subscribe"
+                aria-label="{{ 'newsletter.button_label' | t }}"
+              >
+                <span class="svg-wrapper">
+                  <img src="{{ 'sent-mail-icon.png' | asset_img_url: 'master' }}">
+                </span>
+              </button>
+            </div>
+            {%- if form.errors -%}
+              <small class="newsletter-form__message form__message" id="Newsletter-error--{{ section.id }}">
+                <span class="svg-wrapper">
+                  {{- 'icon-error.svg' | inline_asset_content -}}
+                </span>
+                {{- form.errors.translated_fields.email | capitalize }}
+                {{ form.errors.messages.email -}}
+              </small>
+            {%- endif -%}
+          </div>
+          {%- if form.posted_successfully? -%}
+            <p
+              class="newsletter-form__message newsletter-form__message--success form__message"
+              id="Newsletter-success--{{ section.id }}"
+              tabindex="-1"
+              autofocus
+            >
+              <span class="svg-wrapper">
+                {{- 'icon-success.svg' | inline_asset_content -}}
+              </span>
+              {{- 'newsletter.success' | t }}
+            </p>
+          {%- endif -%}
+        {% endform %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.newsletter02.name",
+  "class": "newsletter-section",
+  "enabled_on": {
+    "groups": ["footer"]
+  },
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "background",
+      "label": "t:sections.newsletter02.settings.background"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "t:sections.newsletter02.settings.text.label",
+      "default": "t:sections.newsletter02.settings.text.default"
+    },
+    {
+      "type": "color",
+      "id": "fontcolor",
+      "label": "t:sections.newsletter02.settings.fontcolor",
+      "default": "#ffffff"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.newsletter02.settings.padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "unit": "px",
+      "label": "t:sections.newsletter02.settings.padding_top",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 50,
+      "step": 1,
+      "unit": "px",
+      "label": "t:sections.newsletter02.settings.padding_bottom",
+      "default": 50
+    }
+  ]
+}
+{% endschema %}

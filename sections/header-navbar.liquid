@@ -1,0 +1,147 @@
+{{ 'header-navbar.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  assign localization_forms = false
+
+  if localization.available_countries.size > 1 and section.settings.enable_country_selector or section.settings.enable_language_selector and localization.available_languages.size > 1
+    assign localization_forms = true
+  endif
+-%}
+
+<div class="header-wrapper">
+  <div class="container">
+    <nav class="header-navbar navbar navbar-expand-lg w-100 {% if localization_forms %} header--has-localizations{% endif %}">
+      <div class="container-fluid">
+        <!-- Logo -->
+        {% if section.settings.header_navbar_logo %}
+          {% assign logo = section.settings.header_navbar_logo | img_url: '198x' %}
+        {% else %}
+          {% assign logo = 'logo.jpg' | asset_img_url: '198x' %}
+        {% endif %}
+        <a class="navbar-brand" href="{{ shop.url }}"><img src="{{ logo }}"></a>
+
+        <!-- Toggle navbar -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#main-menu"
+          aria-controls="main-menu"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Main menu -->
+        <div class="collapse navbar-collapse main-menu" id="main-menu">
+          <div class="d-lg-flex justify-content-between align-items-center w-100">
+            <!-- Empty space on the left side to push menu to center -->
+            <div class="d-none d-lg-block"></div>
+
+            <ul class="navbar-nav mx-auto">
+              {% for link in linklists['main-menu'].links %}
+                <li class="nav-item {% if link.links != blank %}dropdown {% endif %}">
+                  <a
+                    href="{% if link.links != blank %} # {% else %} {{ link.url }} {% endif %}"
+                    class="nav-link {% if link.active %}active {% if link.child_active %}active {% endif %} {% endif %} {% if link.links != blank %}dropdown-toggle {% endif %}"
+                    {% if link.links != blank %}
+                      data-bs-toggle="dropdown"
+                    {% endif %}
+                  >
+                    {{ link.title }}
+                  </a>
+                  {% if link.links != blank %}
+                    <ul class="dropdown-menu">
+                      {% for child_link in link.links %}
+                        <li class="dropdown-item">
+                          <a href="{{ child_link.url }}">{{ child_link.title }}</a>
+                          {% comment %}
+                            {% if child_link.links != blank %}
+                                <ul class="grandchild">
+                                    {% for grandchild_link in child_link.links %}
+                                        <li {% if grandchild_link.active %}class="active {% if grandchild_link.child_active %}child-active{% endif %}"{% endif %}><a href= "{{ grandchild_link.url }}">{{ grandchild_link.title }}</a></li>
+                                    {% endfor %}
+                                </ul>
+                            {% endif %}
+                          {% endcomment %}
+                        </li>
+                      {% endfor %}
+                    </ul>
+                  {% endif %}
+                </li>
+              {% endfor %}
+            </ul>
+
+            <!-- Menu icon -->
+            <div class="menu-icon header__icons d-flex align-items-center">
+              {% if section.settings.enable_country_selector or section.settings.enable_language_selector %}
+                <div class="d-inline {% if section.settings.enable_country_selector or section.settings.enable_language_selector %} header__icons--localization header-localization{% endif %}">
+                  {%- if section.settings.enable_country_selector and localization.available_countries.size > 1 -%}
+                    <localization-form class="small-hide medium-hide" data-prevent-hide>
+                      {%- form 'localization', id: 'HeaderCountryForm', class: 'localization-form' -%}
+                        <div>
+                          <h2 class="visually-hidden" id="HeaderCountryLabel">
+                            {{ 'localization.country_label' | t }}
+                          </h2>
+                          {%- render 'country-localization', localPosition: 'HeaderCountry' -%}
+                        </div>
+                      {%- endform -%}
+                    </localization-form>
+                  {% endif %}
+
+                  {%- if section.settings.enable_language_selector and localization.available_languages.size > 1 -%}
+                    <localization-form class="small-hide medium-hide" data-prevent-hide>
+                      {%- form 'localization', id: 'HeaderLanguageForm', class: 'localization-form' -%}
+                        <div>
+                          <h2 class="visually-hidden" id="HeaderLanguageLabel">
+                            {{ 'localization.language_label' | t }}
+                          </h2>
+                          {%- render 'language-localization', localPosition: 'HeaderLanguage' -%}
+                        </div>
+                      {%- endform -%}
+                    </localization-form>
+                  {%- endif -%}
+                </div>
+              {%- endif -%}
+              <div class="d-inline">
+                <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+              </div>
+              <div class="d-inline">
+                <a href="#"><i class="fa-regular fa-user"></i></a>
+              </div>
+              <div class="d-inline">
+                <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.header-navbar.name",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "header_navbar_logo",
+      "label": "t:sections.header-navbar.logo"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_country_selector",
+      "default": true,
+      "label": "t:sections.header.settings.enable_country_selector.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_language_selector",
+      "default": true,
+      "label": "t:sections.header.settings.enable_language_selector.label"
+    }
+  ]
+}
+{% endschema %}
