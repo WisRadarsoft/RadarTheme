@@ -1,0 +1,180 @@
+{{ 'section-multi-column-rs.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+  .section-{{ section.id }}-margin {
+    margin-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    margin-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-margin {
+      margin-top: {{ section.settings.padding_top }}px;
+      margin-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+
+  .section-{{ section.id }}-btn .multi-column-rs-block .multi-column-rs-btn{
+    min-height: {{ section.settings.button_height }}px;
+  }
+
+  .section-{{ section.id }}-btn .multi-column-rs-block .multi-column-rs-btn{
+    min-width: {{ section.settings.button_width }}px;
+  }
+{%- endstyle -%}
+
+<div class="multi-column-rs section-{{ section.id }}-padding section-{{ section.id }}-margin section-{{ section.id }}-btn">
+    {% for block in section.blocks %}
+        <div class="multi-column-rs-block color-{{ block.settings.color_scheme }}">
+            <h3 class="multi-column-rs-block-title">{{ block.settings.title }}</h3>
+            <div class="multi-column-rs-block-text">{{ block.settings.text }}</div>
+            {% if block.settings.display_button == "show" %}
+                <button class="multi-column-rs-btn">{{ block.settings.button_label }}</button>
+            {% endif  %}
+        </div>
+    {% endfor %}
+</div>
+
+{% schema %}
+{
+  "name": "Multi columns block RS",
+  "class": "section",
+  "tag": "section",
+  "disabled_on": {
+    "groups": ["header"]
+  },
+  "settings": [
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "margin_top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Margin top",
+      "default": 15
+    },
+    {
+      "type": "range",
+      "id": "margin_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Margin bottom",
+      "default": 15
+    },
+    {
+      "type": "text",
+      "id": "button_height",
+      "label": "Button height",
+      "default": "42"
+    },
+    {
+      "type": "text",
+      "id": "button_width",
+      "label": "Button width",
+      "default": "180"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "column",
+      "name": "Multi columns RS block",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "default": "<p>Block Title</p>",
+          "label": "Block Title"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "default": "<p>Block Text</p>",
+          "label": "Block Text"
+        },
+        {
+            "type": "text",
+            "id": "button_label",
+            "default": "Button Label",
+            "label": "Button Label"
+        },
+        {
+            "type": "select",
+            "id": "display_button",
+            "options": [
+                {
+                "value": "none",
+                "label": "Hide button"
+                },
+                {
+                "value": "show",
+                "label": "Show button"
+                }
+            ],
+            "default": "show",
+            "label": "Show Button"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Button URL"
+        },
+        {
+            "type": "color_scheme",
+            "id": "color_scheme",
+            "label": "t:sections.all.colors.label",
+            "default": "scheme-1"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 3,
+  "presets": [
+    {
+      "name": "Multi columns block RS",
+      "blocks": [
+        {
+          "type": "column"
+        },
+        {
+          "type": "column"
+        },
+        {
+          "type": "column"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

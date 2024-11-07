@@ -48,6 +48,8 @@
 {% schema %}
 {
   "name": "t:sections.hero-image.name",
+  "class": "section",
+  "tag": "section",
   "settings": [
     {
       "type": "image_picker",
@@ -100,14 +102,12 @@
       "label": "t:sections.hero-image.button-backgroundcolor",
       "default": "#67796d"
     }
-    /*
-        {
-            "type": "color",
-            "id": "hero_image_button_backgroundcolor_hover",
-            "label": "t:settings_schema.sections.hero-image.backgroundcolor-hover",
-            "default": "#ffffff"
-        },
-        */
+  ],
+  "presets": [
+    {
+      "name": "t:sections.hero-image.name",
+      "blocks": []
+    }
   ]
 }
 {% endschema %}

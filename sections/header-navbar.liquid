@@ -146,12 +146,50 @@
                 {%- endif -%}
               </div>
               <div class="d-inline mini-cart-menu">
-                <a href="{% if cart %}{{ routes.cart_url }}{% else %}#{% endif %}" class="header__icon header__icon--cart link focus-inset"><i class="fa-solid fa-cart-shopping"></i></a>
+                <!-- <a href="{% if cart %}{{ routes.cart_url }}{% else %}#{% endif %}" class="header__icon header__icon--cart link focus-inset"></a>
                 {% if cart.item_count > 0 %}
                   <span class="cart-count">{{ cart.item_count }}</span>
                 {% else  %}
                   <span class="cart-count">0</span>
-                {% endif %}
+                {% endif %} -->
+
+                <div class="button-container">
+                  <button id="openMinicartModalButton" class="header__icon header__icon--cart link focus-inset">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    {% if cart.item_count > 0 %}
+                      <span class="cart-count">{{ cart.item_count }}</span>
+                    {% else  %}
+                      <span class="cart-count">0</span>
+                    {% endif %}
+                    </button>
+                </div>
+
+                <div id="myModal" class="minicart-modal slide-minicart-modal">
+                  <div class="minicart-modal-content">
+                    <span class="close">&times;</span>
+                    <h2>Cart</h2>
+                    {% if cart.item_count > 0 %}
+                      <div class="minicart-item-list">
+                        {% for cart_item in cart.items %}
+                          <div class="minicart-item">
+                            <div class="item-image">{{ cart_item.image.src | image_url: width: 150, height: 150 | image_tag }}</div>
+                            <div class="item-info">
+                              <div class="price">{{ cart_item.price | money_with_currency }}</div>
+                              <div class="qty">x {{ cart_item.quantity | handle }}</div>
+                              <div class="variant">
+                                <div class="variant-item">Size : {{ cart_item.variant.option1 }}</div>
+                                <div class="variant-item">Color : {{ cart_item.variant.option2 }}</div>
+                              </div>
+                            </div>
+                          </div>
+                        {% endfor %}
+                      </div>
+                    {% else %}
+                      <div class="minicart-empty">Cart is empty.</div>
+                    {% endif %}
+                    <a href="{% if cart %}{{ routes.cart_url }}{% else %}#{% endif %}" class="go-to-cart">Go to cart</a>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -160,7 +198,40 @@
     </nav>
   </div>
 </div>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Get the modal and button elements
+    const modal = document.getElementById('myModal');
+    const openModalButton = document.getElementById('openMinicartModalButton');
+    const closeButton = document.querySelector('.minicart-modal .close');
 
+    // Function to open the modal with slide-in animation
+    openModalButton.addEventListener('click', function() {
+      modal.style.display = 'block';
+      setTimeout(() => {
+        modal.classList.add('show');
+      }, 10); // Small delay to trigger the transition
+    });
+
+    // Function to close the modal
+    closeButton.addEventListener('click', function() {
+      modal.classList.remove('show');
+      setTimeout(() => {
+        modal.style.display = 'none';
+      }, 300); // Match this with CSS transition duration
+    });
+
+    // Close the modal when clicking outside the content area
+    window.addEventListener('click', function(event) {
+      if (event.target === modal) {
+        modal.classList.remove('show');
+        setTimeout(() => {
+          modal.style.display = 'none';
+        }, 300);
+      }
+    });
+  });
+</script>
 {% schema %}
 {
   "name": "t:sections.header-navbar.name",
