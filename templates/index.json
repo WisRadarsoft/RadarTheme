@@ -48,7 +48,7 @@
             "position": "left",
             "title": "Til ham",
             "title_color": "#000000",
-            "collection_text": "<p>SE ALT</p><p>TIL HAM</p>",
+            "collection_text": "<p>SE ALT<\/p><p>TIL HAM<\/p>",
             "collection_text_color": "#ffffff",
             "collection_link": "",
             "collection": "adult",
@@ -61,7 +61,7 @@
             "position": "right",
             "title": "Til hende",
             "title_color": "#000000",
-            "collection_text": "<p>SE ALT</p><p>Til hende</p>",
+            "collection_text": "<p>SE ALT<\/p><p>Til hende<\/p>",
             "collection_text_color": "#ffffff",
             "collection_link": "",
             "collection": "adult",
@@ -74,7 +74,7 @@
             "position": "left",
             "title": "Tilbehør",
             "title_color": "#000000",
-            "collection_text": "<p>SE ALT</p><p>Tilbehør</p>",
+            "collection_text": "<p>SE ALT<\/p><p>Tilbehør<\/p>",
             "collection_text_color": "#ffffff",
             "collection_link": "",
             "collection": "adult",
@@ -89,6 +89,57 @@
       ],
       "settings": {
       }
+    },
+    "multi_column_rs_PEqCr7": {
+      "type": "multi-column-rs",
+      "blocks": {
+        "column_4qyhbN": {
+          "type": "column",
+          "settings": {
+            "title": "Spørgsmål & Svar",
+            "text": "<p>Find svar på de mest almindelige spørgsmål<\/p>",
+            "button_label": "TIL FAQ",
+            "display_button": "show",
+            "link": "",
+            "color_scheme": "scheme-3126a96b-db0b-43d9-92d9-afa55b4b799a"
+          }
+        },
+        "column_U6gmbP": {
+          "type": "column",
+          "settings": {
+            "title": "Kontakt os",
+            "text": "<p>Telefon: 65 65 65 65<br\/>Email: info@company.dk<br\/>Åbningstider: Mandag – fredag kl. 09.00 – 16.00<\/p>",
+            "button_label": "Button Label",
+            "display_button": "none",
+            "link": "",
+            "color_scheme": "scheme-1982c5a6-01f5-4d42-bc60-bd6d83dae376"
+          }
+        },
+        "column_NEKpaR": {
+          "type": "column",
+          "settings": {
+            "title": "Om Company",
+            "text": "<p>Company er dansk design til kvinder og mænd<\/p>",
+            "button_label": "MERE OM OS",
+            "display_button": "show",
+            "link": "",
+            "color_scheme": "scheme-3126a96b-db0b-43d9-92d9-afa55b4b799a"
+          }
+        }
+      },
+      "block_order": [
+        "column_4qyhbN",
+        "column_U6gmbP",
+        "column_NEKpaR"
+      ],
+      "settings": {
+        "padding_top": 15,
+        "padding_bottom": 15,
+        "margin_top": 15,
+        "margin_bottom": 15,
+        "button_height": "42",
+        "button_width": "180"
+      }
     }
   },
   "order": [
@@ -96,6 +147,7 @@
     "empty-space-1",
     "featured",
     "empty-space-2",
-    "main-featured-collection"
+    "main-featured-collection",
+    "multi_column_rs_PEqCr7"
   ]
 }
