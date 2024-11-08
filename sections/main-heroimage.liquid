@@ -6,27 +6,34 @@
   {% assign hero_image_background_url = 'Rectangle.png' | asset_img_url: 'master' %}
 {% endif %}
 
-<style>
-  .main-heroimage{
+{%- style -%}
+  .main-heroimage-{{ section.id }}{
       color: {{ section.settings.hero_image_fontcolor }};
       background-image: url('{{ hero_image_background_url }}');
   }
-  .main-heroimage h1{
+  .main-heroimage-{{ section.id }} h1{
       color: {{ section.settings.hero_image_fontcolor }};
   }
-  .main-heroimage .button{
+  .main-heroimage-{{ section.id }} .button{
       color: {{ section.settings.hero_image_button_fontcolor }};
       background-color: {{ section.settings.hero_image_button_backgroundcolor }};
       border:1px solid {{ section.settings.hero_image_button_backgroundcolor }};
   }
-  .main-heroimage .button:hover{
+  .main-heroimage-{{ section.id }} .button:hover{
       color: {{ section.settings.hero_image_button_fontcolor_hover }};
       background: transparent;
       border:1px solid {{ section.settings.hero_image_button_fontcolor_hover }};
   }
-</style>
+  .main-heroimage-{{ section.id }}{
+    height: {{ section.settings.hero_image_height }}px;
+    min-height: 300px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+{%- endstyle -%}
 
-<div class="main-heroimage container-fluid d-flex justify-content-center align-items-center">
+<div class="main-heroimage-{{ section.id }} container-fluid d-flex justify-content-center align-items-center">
   <div class="container">
     <div class="main-heroimage-content text-center">
       <h1>{{ section.settings.hero_image_title }}</h1>
@@ -101,6 +108,12 @@
       "id": "hero_image_button_backgroundcolor",
       "label": "t:sections.hero-image.button-backgroundcolor",
       "default": "#67796d"
+    },
+    {
+      "type": "text",
+      "id": "hero_image_height",
+      "label": "Hero image height (px)",
+      "default": "688"
     }
   ],
   "presets": [
