@@ -119,3 +119,6 @@
   background-color: #ffffff;
   color: #67796d !important;
 }
+details[open] .modal-overlay:after{
+  background-color: transition;
+}
