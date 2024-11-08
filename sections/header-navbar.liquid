@@ -40,7 +40,7 @@
             <div class="d-none d-lg-block"></div>
 
             <ul class="navbar-nav mx-auto">
-              {% for link in linklists['main-menu'].links %}
+              {% for link in linklists['categories-menu'].links %}
                 <li class="nav-item {% if link.links != blank %}dropdown {% endif %}">
                   <a
                     href="{% if link.links != blank %} # {% else %} {{ link.url }} {% endif %}"
