@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "heroimage": {
@@ -48,7 +57,7 @@
             "position": "left",
             "title": "Til ham",
             "title_color": "#000000",
-            "collection_text": "<p>SE ALT<\/p><p>TIL HAM<\/p>",
+            "collection_text": "<p>SE ALT</p><p>TIL HAM</p>",
             "collection_text_color": "#ffffff",
             "collection_link": "",
             "collection": "adult",
@@ -61,7 +70,7 @@
             "position": "right",
             "title": "Til hende",
             "title_color": "#000000",
-            "collection_text": "<p>SE ALT<\/p><p>Til hende<\/p>",
+            "collection_text": "<p>SE ALT</p><p>Til hende</p>",
             "collection_text_color": "#ffffff",
             "collection_link": "",
             "collection": "adult",
@@ -74,7 +83,7 @@
             "position": "left",
             "title": "Tilbehør",
             "title_color": "#000000",
-            "collection_text": "<p>SE ALT<\/p><p>Tilbehør<\/p>",
+            "collection_text": "<p>SE ALT</p><p>Tilbehør</p>",
             "collection_text_color": "#ffffff",
             "collection_link": "",
             "collection": "adult",
@@ -87,8 +96,7 @@
         "main_featured_collection_2",
         "main_featured_collection_3"
       ],
-      "settings": {
-      }
+      "settings": {}
     },
     "multi_column_rs_PEqCr7": {
       "type": "multi-column-rs",
@@ -97,7 +105,7 @@
           "type": "column",
           "settings": {
             "title": "Spørgsmål & Svar",
-            "text": "<p>Find svar på de mest almindelige spørgsmål<\/p>",
+            "text": "<p>Find svar på de mest almindelige spørgsmål</p>",
             "button_label": "TIL FAQ",
             "display_button": "show",
             "link": "",
@@ -108,7 +116,7 @@
           "type": "column",
           "settings": {
             "title": "Kontakt os",
-            "text": "<p>Telefon: 65 65 65 65<br\/>Email: info@company.dk<br\/>Åbningstider: Mandag – fredag kl. 09.00 – 16.00<\/p>",
+            "text": "<p>Telefon: 65 65 65 65<br/>Email: info@company.dk<br/>Åbningstider: Mandag – fredag kl. 09.00 – 16.00</p>",
             "button_label": "Button Label",
             "display_button": "none",
             "link": "",
@@ -119,7 +127,7 @@
           "type": "column",
           "settings": {
             "title": "Om Company",
-            "text": "<p>Company er dansk design til kvinder og mænd<\/p>",
+            "text": "<p>Company er dansk design til kvinder og mænd</p>",
             "button_label": "MERE OM OS",
             "display_button": "show",
             "link": "",
@@ -133,10 +141,10 @@
         "column_NEKpaR"
       ],
       "settings": {
-        "padding_top": 15,
-        "padding_bottom": 15,
-        "margin_top": 15,
-        "margin_bottom": 15,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "margin_top": 0,
+        "margin_bottom": 0,
         "button_height": "42",
         "button_width": "180"
       }
