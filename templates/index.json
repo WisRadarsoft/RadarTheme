@@ -20,7 +20,8 @@
         "hero_image_button_fontcolor": "#ffffff",
         "hero_image_button_fontcolor_hover": "#67796d",
         "hero_image_button_backgroundcolor": "#67796d",
-        "hero_image_height": "688"
+        "hero_image_height": "688",
+        "vertical_image_layout": "container-fluid"
       }
     },
     "empty-space-1": {
@@ -102,7 +103,7 @@
     "main_heroimage_aAPRca": {
       "type": "main-heroimage",
       "settings": {
-        "hero_image_background": "shopify://shop_images/new_Group_1113_2x_9b3f7ff7-9abf-4bf6-8c29-e035f1fece66.png",
+        "hero_image_background": "shopify://shop_images/new_Group_1113_2x_abbff615-b23c-4b6b-bf62-27a821f6f0e3.png",
         "hero_image_title": "Vinter 2024",
         "hero_image_content": "<p>VINTERKOLLEKTIONEN ER LANDET. PREPARE TO BE BRAVE!</p>",
         "hero_image_fontcolor": "#ffffff",
@@ -111,7 +112,14 @@
         "hero_image_button_fontcolor": "#ffffff",
         "hero_image_button_fontcolor_hover": "#ffffff",
         "hero_image_button_backgroundcolor": "#000000",
-        "hero_image_height": "300"
+        "hero_image_height": "300",
+        "vertical_image_layout": "container"
+      }
+    },
+    "empty-space-3": {
+      "type": "empty-space",
+      "settings": {
+        "height": 90
       }
     },
     "multi_column_rs_PEqCr7": {
@@ -173,6 +181,7 @@
     "empty-space-2",
     "main-featured-collection",
     "main_heroimage_aAPRca",
+    "empty-space-3",
     "multi_column_rs_PEqCr7"
   ]
 }
