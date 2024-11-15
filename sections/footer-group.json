@@ -63,6 +63,9 @@
         "footer_social_twitter": "#",
         "footer_social_linkedin": "#",
         "footer_social_instagram": "#",
+        "footer_nav_shop": "footer",
+        "footer_nav_help": "footer-menu-help",
+        "footer_nav_about": "footer-menu-om-cpmpany",
         "footer_copyright_text": "Copyright © 2022 Radarsofthouse. All Rights Reserved."
       }
     }

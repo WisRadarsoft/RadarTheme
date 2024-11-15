@@ -40,7 +40,7 @@
             <div class="d-none d-lg-block"></div>
 
             <ul class="navbar-nav mx-auto">
-              {% for link in linklists['categories-menu'].links %}
+              {% for link in linklists[section.settings.nav_menu].links %}
                 <li class="nav-item {% if link.links != blank %}dropdown {% endif %}">
                   <a
                     href="{% if link.links != blank %} # {% else %} {{ link.url }} {% endif %}"
@@ -76,13 +76,15 @@
             <!-- Menu icon -->
             <div class="menu-icon header__icons d-flex align-items-center">
               <div class="d-inline top-search-menu">
-                {% render 'header-search', input_id: 'Search-In-Modal' %}  
+                {% render 'header-search', input_id: 'Search-In-Modal' %}
                 <div class="desktop-localization-wrapper">
                   {%- if section.settings.enable_country_selector and localization.available_countries.size > 1 -%}
                     <localization-form class="small-hide medium-hide" data-prevent-hide>
                       {%- form 'localization', id: 'HeaderCountryForm', class: 'localization-form' -%}
                         <div>
-                          <h2 class="visually-hidden" id="HeaderCountryLabel">{{ 'localization.country_label' | t }}</h2>
+                          <h2 class="visually-hidden" id="HeaderCountryLabel">
+                            {{ 'localization.country_label' | t }}
+                          </h2>
                           {%- render 'country-localization', localPosition: 'HeaderCountry' -%}
                         </div>
                       {%- endform -%}
@@ -121,13 +123,16 @@
               {%- endif -%}
               <div class="d-inline customer-account-menu">
                 {%- if shop.customer_accounts_enabled -%}
-                  <a href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}" class="header__icon header__icon--account link focus-inset{% if section.settings.menu != blank %} small-hide{% endif %}">
+                  <a
+                    href="{%- if customer -%}{{ routes.account_url }}{%- else -%}{{ routes.account_login_url }}{%- endif -%}"
+                    class="header__icon header__icon--account link focus-inset{% if section.settings.menu != blank %} small-hide{% endif %}"
+                  >
                     {%- if section.settings.enable_customer_avatar -%}
                       <account-icon>
                         {%- if customer and customer.has_avatar? -%}
                           {{ customer | avatar }}
                         {%- else -%}
-                        <i class="fa-regular fa-user"></i>
+                          <i class="fa-regular fa-user"></i>
                         {%- endif -%}
                       </account-icon>
                     {%- else -%}
@@ -146,22 +151,24 @@
                 {%- endif -%}
               </div>
               <div class="d-inline mini-cart-menu">
-                <!-- <a href="{% if cart %}{{ routes.cart_url }}{% else %}#{% endif %}" class="header__icon header__icon--cart link focus-inset"></a>
-                {% if cart.item_count > 0 %}
-                  <span class="cart-count">{{ cart.item_count }}</span>
-                {% else  %}
-                  <span class="cart-count">0</span>
-                {% endif %} -->
+                <!--
+                  <a href="{% if cart %}{{ routes.cart_url }}{% else %}#{% endif %}" class="header__icon header__icon--cart link focus-inset"></a>
+                  {% if cart.item_count > 0 %}
+                    <span class="cart-count">{{ cart.item_count }}</span>
+                  {% else  %}
+                    <span class="cart-count">0</span>
+                  {% endif %}
+                -->
 
                 <div class="button-container">
                   <button id="openMinicartModalButton" class="header__icon header__icon--cart link focus-inset">
                     <i class="fa-solid fa-cart-shopping"></i>
                     {% if cart.item_count > 0 %}
                       <span class="cart-count">{{ cart.item_count }}</span>
-                    {% else  %}
+                    {% else %}
                       <span class="cart-count">0</span>
                     {% endif %}
-                    </button>
+                  </button>
                 </div>
 
                 <div id="myModal" class="minicart-modal slide-minicart-modal">
@@ -172,7 +179,9 @@
                       <div class="minicart-item-list">
                         {% for cart_item in cart.items %}
                           <div class="minicart-item">
-                            <div class="item-image">{{ cart_item.image.src | image_url: width: 150, height: 150 | image_tag }}</div>
+                            <div class="item-image">
+                              {{ cart_item.image.src | image_url: width: 150, height: 150 | image_tag }}
+                            </div>
                             <div class="item-info">
                               <div class="price">{{ cart_item.price | money_with_currency }}</div>
                               <div class="qty">x {{ cart_item.quantity | handle }}</div>
@@ -199,14 +208,14 @@
   </div>
 </div>
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
+  document.addEventListener('DOMContentLoaded', function () {
     // Get the modal and button elements
     const modal = document.getElementById('myModal');
     const openModalButton = document.getElementById('openMinicartModalButton');
     const closeButton = document.querySelector('.minicart-modal .close');
 
     // Function to open the modal with slide-in animation
-    openModalButton.addEventListener('click', function() {
+    openModalButton.addEventListener('click', function () {
       modal.style.display = 'block';
       setTimeout(() => {
         modal.classList.add('show');
@@ -214,7 +223,7 @@
     });
 
     // Function to close the modal
-    closeButton.addEventListener('click', function() {
+    closeButton.addEventListener('click', function () {
       modal.classList.remove('show');
       setTimeout(() => {
         modal.style.display = 'none';
@@ -222,7 +231,7 @@
     });
 
     // Close the modal when clicking outside the content area
-    window.addEventListener('click', function(event) {
+    window.addEventListener('click', function (event) {
       if (event.target === modal) {
         modal.classList.remove('show');
         setTimeout(() => {
@@ -240,6 +249,11 @@
       "type": "image_picker",
       "id": "header_navbar_logo",
       "label": "t:sections.header-navbar.logo"
+    },
+    {
+      "type": "link_list",
+      "id": "nav_menu",
+      "label": "t:sections.header-navbar.mainmenu"
     },
     {
       "type": "checkbox",
