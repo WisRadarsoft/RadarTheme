@@ -194,7 +194,9 @@
                         {% endfor %}
                       </div>
                     {% else %}
-                      <div class="minicart-empty">Cart is empty.</div>
+                      <div class="minicart-item-list">
+                        <div class="minicart-empty">Cart is empty.</div>
+                      </div>
                     {% endif %}
                     <a href="{% if cart %}{{ routes.cart_url }}{% else %}#{% endif %}" class="go-to-cart">Go to cart</a>
                   </div>

@@ -20,8 +20,6 @@ document.querySelectorAll('.product-item-card').forEach(function (card) {
           });
         });
 
-        console.log(matchedVariant);
-
         if (matchedVariant) {
           button_add_to_cart.setAttribute('data-variant-id', matchedVariant.id);
           product_item_price.innerHTML = matchedVariant.price;
