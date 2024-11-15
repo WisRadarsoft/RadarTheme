@@ -1,0 +1,26 @@
+.main-featured-collection{
+    .featured-collection-header{
+        font-size: 2.25rem;
+        font-weight: 900;
+        margin-bottom: 30px;
+    }
+    .collection-image{
+        min-height: 496px;
+        position: relative;
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .collection-label{
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            text-align: center;
+            transform: translate(calc(-50% - 0.875rem), -50%);
+            p{
+                margin-bottom: 0px;
+            }
+        }
+    }
+}

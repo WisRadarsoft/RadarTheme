@@ -1,0 +1,26 @@
+.newsletter-02{
+    .newsletter-form__field-wrapper{
+        .field{
+            &::before,
+            &::after{
+                content: unset;
+            }
+        }
+        input{
+            width: 100%;
+            height: 44px;
+            background-color: transparent;
+            border: 0px;
+        }
+        button{
+            width: unset;
+            height: 44px;
+            img{
+                width: 19px;
+            }
+        }
+        .form__message{
+            font-size: 1rem;
+        }
+    }
+}

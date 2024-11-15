@@ -1,0 +1,133 @@
+body{
+    font-size: 16px;
+}
+.header-wrapper{
+    border-width: 1px;
+    border-color: #f0f0f0;
+    border-style: solid;
+}
+main{
+    h1{
+        font-size: 32px;
+        font-weight: 700;
+        letter-spacing: unset;
+    }
+    h2{
+        font-size: 28px;
+        font-weight: 700;
+        letter-spacing: unset;
+    }
+    h3{
+        font-size: 24px;
+        font-weight: 600;
+        letter-spacing: unset;
+    }
+    h4{
+        font-size: 22px;
+        letter-spacing: unset;
+    }
+    h5{
+        font-size: 20px;
+        letter-spacing: unset;
+    }
+    h6{
+        font-size: 18px;
+        letter-spacing: unset;
+    }
+    a{
+        text-decoration: none;
+        color: #000000;
+    }
+    .button{
+        font-size: 1rem;
+    }
+    .btn{
+        width: 220px;
+        max-width: 100%;
+        font-size: 1rem;
+        font-weight: 600;
+        padding: 12px 0px;
+        border-radius: 0px;
+        border: 0px;
+    }
+    .btn-primary{
+        color: #FFFFFF;
+        background: #67796d;
+        border-width: 1px;
+        border-style: solid;
+        border-color: #67796d;
+        .loading__spinner{
+            margin-left: 10px;
+            .path{
+                stroke: #FFFFFF;
+            }
+        }
+        &:hover{
+            color: #67796d;
+            background-color: #FFFFFF;
+            border-color: #67796d;
+            .loading__spinner{
+                .path{
+                    stroke: #67796d;
+                }
+            }
+        }
+        &.disable{
+            pointer-events: none;
+            opacity: 0.8;
+        }
+    }
+    .btn-secondary{
+        color: #FFFFFF;
+        background: #67796d;
+        border-width: 1px;
+        border-style: solid;
+        border-color: #67796d;
+        &:hover{
+            color: #67796d;
+            background-color: #FFFFFF;
+            border-color: #67796d;
+        }
+    }
+
+    .product-form__input--pill input[type='radio'] + label{
+        color: #a9a9a9;
+        border-color: #a9a9a9;
+    }
+    .product-form__input--pill input[type='radio']:checked + label{
+        border-color: rgb(var(--color-foreground));
+    }
+    .product-form__quantity .form__label{
+        font-size: 1rem;
+    }
+    .quantity{
+        width: 120px;
+        min-height: unset;
+        height: 44px;
+    }
+    .quantity__text{
+        font-weight: 700;
+    }
+    .quantity__button{
+        width: 24px;
+        font-size: 1rem;
+    }
+    .quantity__input{
+        font-size: 1rem;
+    }
+    .product-form__buttons button{
+        min-height: unset;
+        height: 48px;
+        font-weight: 700;
+        &::before,
+        &::after{
+            content: unset;
+        }
+    }
+}
+
+*:focus-visible{
+    outline: none;
+    outline-offset: unset;
+    box-shadow: none;
+}
