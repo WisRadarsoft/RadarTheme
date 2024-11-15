@@ -62,6 +62,7 @@
   width: 100%;
   aspect-ratio: 1/1;
   display: block;
+  border-radius: 0px;
 }
 .product-item-card .product-variant .option-group-Color .option-values input:checked + label {
   border-color: #000000;
