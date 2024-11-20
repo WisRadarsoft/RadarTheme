@@ -72,10 +72,6 @@ main{
                 }
             }
         }
-        &.disable{
-            pointer-events: none;
-            opacity: 0.8;
-        }
     }
     .btn-secondary{
         color: #FFFFFF;
@@ -124,6 +120,11 @@ main{
             content: unset;
         }
     }
+}
+
+.disable{
+    pointer-events: none;
+    opacity: 0.5;
 }
 
 *:focus-visible{

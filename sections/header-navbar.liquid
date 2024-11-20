@@ -171,6 +171,7 @@
                   </button>
                 </div>
 
+                {% comment %} <script src="{{ 'mini-cart.js' | asset_url }}" defer="defer"></script> {% endcomment %}
                 <div id="myModal" class="minicart-modal slide-minicart-modal">
                   <div class="minicart-modal-content">
                     <span class="close">&times;</span>
@@ -185,10 +186,24 @@
                             <div class="item-info">
                               <div class="price">{{ cart_item.price | money_with_currency }}</div>
                               <div class="qty">x {{ cart_item.quantity | handle }}</div>
-                              <div class="variant">
-                                <div class="variant-item">Size : {{ cart_item.variant.option1 }}</div>
-                                <div class="variant-item">Color : {{ cart_item.variant.option2 }}</div>
-                              </div>
+                              {%- if cart_item.product.has_only_default_variant == false -%}
+                                {%- for option in cart_item.options_with_values -%}
+                                  <div class="variant">
+                                    <div class="variant-item">{{ option.name }} : {{ option.value }}</div>
+                                  </div>
+                                {%- endfor -%}
+                              {%- endif -%}
+                              <mini-cart-remove-button
+                                id="Remove-{{ cart_item.index | plus: 1 }}"
+                                data-index="{{ cart_item.index | plus: 1 }}"
+                              >
+                                <a
+                                  href="{{ cart_item.url_to_remove }}"
+                                  class="button button--tertiary button-mini-cart-remove"
+                                >
+                                  <span>Remove</span>
+                                </a>
+                              </mini-cart-remove-button>
                             </div>
                           </div>
                         {% endfor %}

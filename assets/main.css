@@ -72,10 +72,6 @@ main .btn-primary:hover {
 main .btn-primary:hover .loading__spinner .path {
   stroke: #67796d;
 }
-main .btn-primary.disable {
-  pointer-events: none;
-  opacity: 0.8;
-}
 main .btn-secondary {
   color: #FFFFFF;
   background: #67796d;
@@ -120,6 +116,11 @@ main .product-form__buttons button {
 }
 main .product-form__buttons button::before, main .product-form__buttons button::after {
   content: unset;
+}
+
+.disable {
+  pointer-events: none;
+  opacity: 0.5;
 }
 
 *:focus-visible {
