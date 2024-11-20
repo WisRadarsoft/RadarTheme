@@ -112,7 +112,6 @@ function updateMiniCart(cart) {
       } else {
         varinat = '';
       }
-      console.log(pipelineVendor.themeCurrency.formatMoney(item.price));
       const itemHTML = `
         <div class="minicart-item">
           <div class="item-image">
