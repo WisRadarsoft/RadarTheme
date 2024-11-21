@@ -93,9 +93,36 @@
   display: flex;
   flex-direction: column;
   height: 80vh;
+  overflow-y: auto;
 }
 .header-navbar .minicart-modal-content .minicart-item-list .minicart-item {
   display: inline-flex;
+  margin-bottom: 15px;
+}
+.header-navbar .minicart-modal-content .minicart-item-list .minicart-item .item-info {
+  padding-left: 15px;
+}
+.header-navbar .minicart-modal-content .minicart-item-list .minicart-item .item-info .variant .variant-item span {
+  font-weight: 700;
+}
+.header-navbar .minicart-modal-content .minicart-item-list .minicart-item .item-info .price {
+  font-size: 1rem;
+}
+.header-navbar .minicart-modal-content .minicart-item-list .minicart-item .item-info .button-mini-cart-remove {
+  width: 20px;
+  height: 24px;
+  display: block;
+  background-image: url("../assets/icon-remove.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  min-width: unset;
+  min-height: unset;
+  padding: 0px 20px;
+  margin-top: 20px;
+}
+.header-navbar .minicart-modal-content .minicart-item-list .minicart-item .item-info .button-mini-cart-remove span {
+  visibility: hidden;
 }
 .header-navbar .minicart-modal-content .go-to-cart {
   position: absolute;
