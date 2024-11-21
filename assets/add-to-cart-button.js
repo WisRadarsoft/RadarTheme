@@ -105,7 +105,7 @@ function updateMiniCart(cart) {
       let variant_items = '';
       if (item.variant_title !== null) {
         item.options_with_values.forEach((variant) => {
-          const variant_item = `<div class="variant-item">${variant.name} : ${variant.value}</div>`;
+          const variant_item = `<div class="variant-item"><span>${variant.name} :</span> ${variant.value}</div>`;
           variant_items += variant_item;
         });
         varinat = `<div class="variant">` + variant_items + `</div>`;
@@ -118,9 +118,12 @@ function updateMiniCart(cart) {
             <img src="${item.image}" alt="${item.title}" width="150" height="150">
           </div>
           <div class="item-info">
-            <div class="price">${item.price}</div>
-            <div class="qty">x ${item.quantity}</div>
+            <div class="item-title">
+              <span class="qty">${item.quantity} x</span>
+                ${item.title}
+              </div>
             ${varinat}
+            <div class="price">${item.price}</div>
             <mini-cart-remove-button
               id="Remove-${itemCount}"
               data-index="${itemCount}"

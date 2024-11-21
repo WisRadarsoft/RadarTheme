@@ -104,9 +104,52 @@
         display: flex;
         flex-direction: column;
         height: 80vh;
+        overflow-y: auto;
       }
-      .minicart-modal-content .minicart-item-list .minicart-item{
-        display: inline-flex;
+      .minicart-modal-content{
+        .minicart-item-list{
+            .minicart-item{
+                display: inline-flex;
+                margin-bottom: 15px;
+                .item-image{
+
+                }
+                .item-info{
+                    padding-left: 15px;
+                    .item-title{
+                        .qty{
+
+                        }
+                    }
+                    .variant{
+                        .variant-item{
+                            span{
+                                font-weight: 700;
+                            }
+                        }
+                    }
+                    .price{
+                        font-size: 1rem;
+                    }
+                    .button-mini-cart-remove{
+                        width: 20px;
+                        height: 24px;
+                        display: block;
+                        background-image: url('../assets/icon-remove.svg');
+                        background-repeat: no-repeat;
+                        background-size: contain;
+                        background-position: center;
+                        min-width: unset;
+                        min-height: unset;
+                        padding: 0px 20px;
+                        margin-top: 20px;
+                        span{
+                            visibility: hidden;
+                        }
+                    }
+                }
+            }
+        }
       }
       .minicart-modal-content .go-to-cart{
         position: absolute;
