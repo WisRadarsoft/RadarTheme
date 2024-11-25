@@ -1,0 +1,16 @@
+.cart__items {
+  padding-bottom: 30px;
+}
+.cart__items .cart-items .cart-item__media {
+  padding-top: 30px;
+}
+.cart__items .cart-items .cart-item__details {
+  padding-top: 30px;
+}
+.cart__items .cart-items .cart-item__details .product-option {
+  font-size: 1rem;
+  margin-top: 0px;
+}
+.cart__items .cart-items .cart-item__totals .price {
+  font-size: 1rem;
+}
