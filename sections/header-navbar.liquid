@@ -56,7 +56,6 @@
                       {% for child_link in link.links %}
                         <li class="dropdown-item">
                           <a href="{{ child_link.url }}">{{ child_link.title }}</a>
-                          {% comment %}
                             {% if child_link.links != blank %}
                                 <ul class="grandchild">
                                     {% for grandchild_link in child_link.links %}
@@ -64,7 +63,6 @@
                                     {% endfor %}
                                 </ul>
                             {% endif %}
-                          {% endcomment %}
                         </li>
                       {% endfor %}
                     </ul>
