@@ -4,6 +4,7 @@ document.querySelectorAll('.product-item-card').forEach(function (card) {
   const product_item_price = card.querySelector('.price-item');
 
   const encodedData = card.getAttribute('data-variants');
+
   if (encodedData) {
     const jsonString = atob(encodedData);
     const variants = JSON.parse(jsonString);
