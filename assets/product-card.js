@@ -10,8 +10,9 @@ document.querySelectorAll('.product-item-card').forEach(function (card) {
     const variants = JSON.parse(jsonString);
 
     card.querySelectorAll('input[name^="option_"]').forEach(function (optionInput) {
-      optionInput.addEventListener('change', function () {
-        const selectedOptions = [...this.querySelectorAll('input[name^="option_"]:checked')].map(function (input) {
+      optionInput.addEventListener('change', function (item) {
+        const elem = item.closet('.product-variant');
+        const selectedOptions = [...elem.querySelectorAll('input[name^="option_"]:checked')].map(function (input) {
           return input.value;
         });
         const matchedVariant = variants.find(function (variant) {
