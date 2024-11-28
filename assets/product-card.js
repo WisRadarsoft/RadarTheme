@@ -1,14 +1,14 @@
-document.querySelectorAll('.product-item-card').forEach(function () {
-  const button_add_to_cart = this.querySelector('.button-add-to-cart');
-  const product_item_media = this.querySelector('.product-item-media img');
-  const product_item_price = this.querySelector('.price-item');
+document.querySelectorAll('.product-item-card').forEach(function (card) {
+  const button_add_to_cart = card.querySelector('.button-add-to-cart');
+  const product_item_media = card.querySelector('.product-item-media img');
+  const product_item_price = card.querySelector('.price-item');
 
   const encodedData = this.getAttribute('data-variants');
   if (encodedData) {
     const jsonString = atob(encodedData);
     const variants = JSON.parse(jsonString);
 
-    this.querySelectorAll('input[name^="option_"]').forEach(function (optionInput) {
+    card.querySelectorAll('input[name^="option_"]').forEach(function (optionInput) {
       optionInput.addEventListener('change', function () {
         const selectedOptions = [...this.querySelectorAll('input[name^="option_"]:checked')].map(function (input) {
           return input.value;
