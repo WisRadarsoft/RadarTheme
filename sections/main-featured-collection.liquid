@@ -45,7 +45,7 @@
             </a>
           </div>
           {%- for product in block.settings.collection.products limit: 4 -%}
-            {{ block.settings.collection }}
+            {{ product | json }}
             <div class="collection-product col order-1">
               {% render 'card-product02', card_product: product, section_id: section.id %}
             </div>
