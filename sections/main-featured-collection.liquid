@@ -44,10 +44,9 @@
               <span class="collection-label">{{ block.settings.collection_text }}</span>
             </a>
           </div>
-          {{ section }}
           {%- for product in block.settings.collection.products limit: 4 -%}
             <div class="collection-product col order-1">
-              {% render 'card-product02', card_product: product, section_id: section.id %}
+              {% render 'card-product02', card_product: product%}
             </div>
           {%- endfor -%}
         </div>

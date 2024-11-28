@@ -26,7 +26,7 @@
           <div id="product-grid" data-id="{{ section.id }}" class="row row-cols-1 row-cols-lg-3 g-lg-4">
             {%- for product in collection.products -%}
               <div class="collection-product col">
-                {% render 'card-product02', card_product: product, section_id: section.id %}
+                {% render 'card-product02', card_product: product%}
               </div>
             {% endfor %}
           </div>
