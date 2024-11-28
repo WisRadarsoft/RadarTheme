@@ -3,7 +3,7 @@ document.querySelectorAll('.product-item-card').forEach(function (card) {
   const product_item_media = card.querySelector('.product-item-media img');
   const product_item_price = card.querySelector('.price-item');
 
-  const encodedData = this.getAttribute('data-variants');
+  const encodedData = card.getAttribute('data-variants');
   if (encodedData) {
     const jsonString = atob(encodedData);
     const variants = JSON.parse(jsonString);
