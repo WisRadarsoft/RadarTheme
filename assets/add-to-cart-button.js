@@ -94,12 +94,14 @@ customElements.define('mini-cart-remove-button', MiniCartRemoveButton);
 function updateMiniCart(cart) {
   const miniCartItemList = document.querySelector('.minicart-item-list');
   const miniCartEmpty = document.querySelector('.minicart-empty');
+  const currency_active = Shopify.currency.active;
 
   miniCartItemList.innerHTML = '';
 
   if (cart.items.length > 0) {
     let itemCount = 1;
     cart.items.forEach((item) => {
+      console.log(item);
       const urlToRemove = `/cart/change?line=${item.key}&quantity=0`;
       let varinat = '';
       let variant_items = '';
@@ -112,6 +114,8 @@ function updateMiniCart(cart) {
       } else {
         varinat = '';
       }
+      let formattedPrice = formatMoney(item.price, currency_active);
+      console.log(formattedPrice);
       const itemHTML = `
         <div class="minicart-item">
           <div class="item-image">
@@ -123,7 +127,7 @@ function updateMiniCart(cart) {
                 ${item.title}
               </div>
             ${varinat}
-            <div class="price">${item.price}</div>
+            <div class="price">${formattedPrice}</div>
             <mini-cart-remove-button
               id="Remove-${itemCount}"
               data-index="${itemCount}"
@@ -145,5 +149,24 @@ function updateMiniCart(cart) {
     miniCartEmpty.classList.add('hidden');
   } else {
     miniCartEmpty.classList.remove('hidden');
+  }
+}
+
+function formatMoney(amount, currency = 'USD') {
+  const formattedAmount = (amount / 100).toFixed(2);
+  const parts = formattedAmount.split('.');
+  let integerPart = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+  let decimalPart = parts[1];
+
+  if (currency === 'DKK') {
+    integerPart = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, '.');
+    decimalPart = parts[1].replace('.', ',');
+    return `${integerPart},${decimalPart} DKK`;
+  } else if (currency === 'EUR') {
+    return `${integerPart},${decimalPart} €`;
+  } else if (currency === 'USD') {
+    return `${integerPart}.${decimalPart} USD`;
+  } else {
+    return `${integerPart}.${decimalPart} ${currency}`;
   }
 }
