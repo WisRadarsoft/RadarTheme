@@ -20,8 +20,7 @@
         "hero_image_button_fontcolor": "#ffffff",
         "hero_image_button_fontcolor_hover": "#67796d",
         "hero_image_button_backgroundcolor": "#67796d",
-        "hero_image_height": "688",
-        "vertical_image_layout": "container-fluid"
+        "hero_image_height": "688"
       }
     },
     "empty-space-1": {
@@ -112,8 +111,7 @@
         "hero_image_button_fontcolor": "#ffffff",
         "hero_image_button_fontcolor_hover": "#ffffff",
         "hero_image_button_backgroundcolor": "#000000",
-        "hero_image_height": "300",
-        "vertical_image_layout": "container"
+        "hero_image_height": "300"
       }
     },
     "empty-space-3": {
