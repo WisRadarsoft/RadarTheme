@@ -13,7 +13,7 @@ document.querySelectorAll('.product-item-card').forEach(function (card) {
         const selectedOptions = [...card.querySelectorAll('input[name^="option_"]:checked')].map(function (input) {
           return input.value;
         });
-
+        console.log(selectedOptions);
         const matchedVariant = variants.find(function (variant) {
           return variant.options.every(function (opt, index) {
             return opt === selectedOptions[index];
