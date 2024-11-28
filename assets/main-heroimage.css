@@ -15,3 +15,11 @@
 .main-heroimage .button::before, .main-heroimage .button::after {
   content: none;
 }
+.hero-image-botton{
+  gap: 1rem;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+}
