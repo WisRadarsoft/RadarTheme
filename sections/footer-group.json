@@ -17,19 +17,19 @@
         "inline_service_1": {
           "type": "inline_service",
           "settings": {
-            "text": "<p>Følg din ordre med<\/p><p>trackingnummer<\/p>"
+            "text": "<p>Følg din ordre med</p><p>trackingnummer</p>"
           }
         },
         "inline_service_2": {
           "type": "inline_service",
           "settings": {
-            "text": "<p>Fuld returret<\/p><p>- nem returnering<\/p>"
+            "text": "<p>Fuld returret</p><p>- nem returnering</p>"
           }
         },
         "inline_service_3": {
           "type": "inline_service",
           "settings": {
-            "text": "<p>Bestil inden kl. 16 og modtag<\/p><p>dine varer i morgen<\/p>"
+            "text": "<p>Bestil inden kl. 16 og modtag</p><p>dine varer i morgen</p>"
           }
         }
       },
@@ -48,7 +48,7 @@
     "newsletter": {
       "type": "newsletter02",
       "settings": {
-        "text": "<p><strong>Tilmeld dig til vores nyhedsbrev og kom forrest i køen<\/strong><\/p><p>Få 10% rabat på din første ordre ved tilmelding!<\/p>",
+        "text": "<p><strong>Tilmeld dig til vores nyhedsbrev og kom forrest i køen</strong></p><p>Få 10% rabat på din første ordre ved tilmelding!</p>",
         "fontcolor": "#ffffff",
         "padding_top": 50,
         "padding_bottom": 50
@@ -63,9 +63,9 @@
         "footer_social_twitter": "#",
         "footer_social_linkedin": "#",
         "footer_social_instagram": "#",
-        "footer_nav_shop": "footer",
-        "footer_nav_help": "footer-menu-help",
-        "footer_nav_about": "footer-menu-om-cpmpany",
+        "footer_nav_shop": "footer-menu-1",
+        "footer_nav_help": "footer-menu-2",
+        "footer_nav_about": "footer-menu-3",
         "footer_copyright_text": "Copyright © 2022 Radarsofthouse. All Rights Reserved."
       }
     }
