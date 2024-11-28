@@ -12,6 +12,7 @@ document.querySelectorAll('.product-item-card').forEach(function (card) {
     card.querySelectorAll('input[name^="option_"]').forEach(function (optionInput) {
       optionInput.addEventListener('change', function (item) {
         const elem = item.target.closest('.product-variant');
+
         const selectedOptions = [...elem.querySelectorAll('input[name^="option_"]:checked')].map(function (input) {
           return input.value;
         });
