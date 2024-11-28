@@ -10,7 +10,6 @@ document.querySelectorAll('.product-item-card').forEach(function (card) {
 
     card.querySelectorAll('input[name^="option_"]').forEach(function (optionInput) {
       optionInput.addEventListener('change', function () {
-        console.log('test');
         const selectedOptions = [...card.querySelectorAll('input[name^="option_"]:checked')].map(function (input) {
           return input.value;
         });
