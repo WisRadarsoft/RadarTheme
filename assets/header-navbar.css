@@ -151,16 +151,20 @@
   position: unset;
 }
 
-/*.dropdown-menu{
+.dropdown-menu{
   left: 0;
   top: 130px;
   width: 100%;
   margin: 1px 0 0 0;
   border-radius: 0;
-  display: inline-grid;
-  grid-template-columns: repeat(4, 1fr);
-  padding: 30px;
-}*/
+  vertical-align: top;
+}
+
+.dropdown-item{
+  display: inline-block;
+  width: 24%;
+  vertical-align: top;
+}
 
 .dropdown-menu,.dropdown-item{
   background: #ffffff !important;
