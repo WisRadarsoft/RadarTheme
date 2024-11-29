@@ -166,6 +166,14 @@
   vertical-align: top;
 }
 
+.dropdown-item a{
+  text-decoration: none;
+}
+
+.dropdown-item > a {
+  font-weight: bold;
+}
+
 .dropdown-menu,.dropdown-item{
   background: #ffffff !important;
 }
