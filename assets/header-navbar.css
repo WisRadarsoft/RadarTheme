@@ -151,7 +151,7 @@
   position: unset;
 }
 
-.dropdown-menu{
+/*.dropdown-menu{
   left: 0;
   top: 130px;
   width: 100%;
@@ -160,7 +160,7 @@
   display: inline-grid;
   grid-template-columns: repeat(4, 1fr);
   padding: 30px;
-}
+}*/
 
 .dropdown-menu,.dropdown-item{
   background: #ffffff !important;
