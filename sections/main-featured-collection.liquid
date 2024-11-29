@@ -34,7 +34,8 @@
     {% else %}
       {% assign col_order = 'order-2' %}
     {% endif %}
-    <div id="{{ section.id }}-{{ forloop.index }}" class="main-featured-collection">
+    {% assign section_id = section.id | append: '-' | append: forloop.index %}
+    <div id="{{ section_id }}" class="main-featured-collection">
       <h2 class="featured-collection-header text-center">{{ block.settings.title }}</h2>
       <div class="container">
         <div class="row row-cols-1 row-cols-lg-5 g-lg-4">
@@ -46,7 +47,7 @@
           </div>
           {%- for product in block.settings.collection.products limit: 4 -%}
             <div class="collection-product col order-1">
-              {% render 'card-product02', card_product: product %}
+              {% render 'card-product02', card_product: product, section_id: section_id %}
             </div>
           {%- endfor -%}
         </div>

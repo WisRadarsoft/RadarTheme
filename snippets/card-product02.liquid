@@ -72,9 +72,9 @@
                   -%}
                   <div>
                     <input
-                      id="product-{{ card_product.id }}-{{ value.id }}"
+                      id="product-{{ card_product.id }}-{{ value.id }}-{{ section_id }}"
                       type="radio"
-                      name="option_{{ option.name }}_{{ card_product.id }}"
+                      name="option_{{ option.name }}_{{ card_product.id }}_{{ section_id }}"
                       value="{{ value }}"
                       data-value-id="{{ value.id }}"
                       data-product-id="{{ card_product.id }}"
@@ -83,7 +83,10 @@
                       {% endif %}
                     >
                     {% if value.swatch.color %}
-                      <label for="product-{{ card_product.id }}-{{ value.id }}" class="swatch-input__label">
+                      <label
+                        for="product-{{ card_product.id }}-{{ value.id }}-{{ section_id }}"
+                        class="swatch-input__label"
+                      >
                         <span
                           class="swatch"
                           style="background-color: {{swatch_value}};"
@@ -91,7 +94,7 @@
                         <span class="visually-hidden">{{ value }}</span>
                       </label>
                     {% else %}
-                      <label for="product-{{ card_product.id }}-{{ value.id }}">{{ value }}</label>
+                      <label for="product-{{ card_product.id }}-{{ value.id }}-{{ section_id }}">{{ value }}</label>
                     {% endif %}
                   </div>
                 {% endfor %}
