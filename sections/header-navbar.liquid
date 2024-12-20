@@ -195,17 +195,33 @@
                                 </div>
                               {%- endif -%}
                               <div class="price">{{ cart_item.price | money_with_currency }}</div>
-                              <mini-cart-remove-button
-                                id="Remove-{{ cart_item.index | plus: 1 }}"
-                                data-index="{{ cart_item.index | plus: 1 }}"
-                              >
-                                <a
-                                  href="{{ cart_item.url_to_remove }}"
-                                  class="button button--tertiary button-mini-cart-remove"
+                              <div class="minicart-product-action">
+                                <div class="update-minicart-qty">
+                                  <input type="number" min="1" id="qty-minicart-{{ cart_item.index | plus: 1 }}" class="qty-minicart" value="{{ cart_item.quantity }}" min="0">
+                                  <mini-cart-update-button
+                                    id="Update-{{ cart_item.index | plus: 1 }}"
+                                    data-index="{{ cart_item.index | plus: 1 }}"
+                                  >
+                                    <a
+                                      href="#"
+                                      class="button button--tertiary button-mini-cart-update"
+                                    >
+                                      <span>update</span>
+                                    </a>
+                                  </mini-cart-update-button>
+                                </div>
+                                <mini-cart-remove-button
+                                  id="Remove-{{ cart_item.index | plus: 1 }}"
+                                  data-index="{{ cart_item.index | plus: 1 }}"
                                 >
-                                  <span>Remove</span>
-                                </a>
-                              </mini-cart-remove-button>
+                                  <a
+                                    href="{{ cart_item.url_to_remove }}"
+                                    class="button button--tertiary button-mini-cart-remove"
+                                  >
+                                    <span>Remove</span>
+                                  </a>
+                                </mini-cart-remove-button>
+                              </div>
                             </div>
                           </div>
                         {% endfor %}

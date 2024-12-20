@@ -91,6 +91,46 @@ class MiniCartRemoveButton extends HTMLElement {
 }
 customElements.define('mini-cart-remove-button', MiniCartRemoveButton);
 
+class MiniCartUpdateButton extends HTMLElement {
+  constructor() {
+    super();
+
+    const UpdateMiniCartButtons = document.querySelectorAll('.button-mini-cart-update');
+
+    this.addEventListener('click', (event) => {
+      event.preventDefault();
+      UpdateMiniCartButtons.forEach((btn) => btn.classList.add('disable'));
+      const index = this.dataset.index;
+
+      const addValue = document.querySelector('#qty-minicart-' + index).value;
+
+      fetch('/cart/change.js', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'X-Requested-With': 'XMLHttpRequest',
+        },
+        body: JSON.stringify({
+          line: index,
+          quantity: addValue,
+        }),
+      })
+        .then((response) => response.json())
+        .then((cart) => {
+          const cartCount = document.querySelector('.cart-count');
+
+          cartCount.textContent = cart.item_count;
+          updateMiniCart(cart);
+        })
+        .catch((error) => {})
+        .finally(() => {
+          UpdateMiniCartButtons.forEach((btn) => btn.classList.remove('disable'));
+        });
+    });
+  }
+}
+customElements.define('mini-cart-update-button', MiniCartUpdateButton);
+
 function updateMiniCart(cart) {
   const miniCartItemList = document.querySelector('.minicart-item-list');
   const miniCartEmpty = document.querySelector('.minicart-empty');
@@ -128,17 +168,33 @@ function updateMiniCart(cart) {
               </div>
             ${varinat}
             <div class="price">${formattedPrice}</div>
-            <mini-cart-remove-button
-              id="Remove-${itemCount}"
-              data-index="${itemCount}"
-            >
-              <a
-                href="${urlToRemove}"
-                class="button button--tertiary button-mini-cart-remove"a
+            <div class="minicart-product-action">
+              <div class="update-minicart-qty">
+                <input type="number" min="1" id="qty-minicart-${itemCount}" class="qty-minicart" value="${item.quantity}">
+                <mini-cart-update-button
+                  id="Update-${itemCount}"
+                  data-index="${itemCount}"
+                >
+                  <a
+                    href="#"
+                    class="button button--tertiary button-mini-cart-update"
+                  >
+                    <span>update</span>
+                  </a>
+                </mini-cart-update-button>
+              </div>
+              <mini-cart-remove-button
+                id="Remove-${itemCount}"
+                data-index="${itemCount}"
               >
-                <span>Remove</span>
-              </a>
-            </mini-cart-remove-button>
+                <a
+                  href="${urlToRemove}"
+                  class="button button--tertiary button-mini-cart-remove"
+                >
+                  <span>Remove</span>
+                </a>
+              </mini-cart-remove-button>
+            </div>
           </div>
         </div>
       `;
@@ -148,6 +204,10 @@ function updateMiniCart(cart) {
 
     miniCartEmpty.classList.add('hidden');
   } else {
+    const itemHTML = `
+      <div class="minicart-empty">Cart is empty.</div>
+      `;
+    miniCartItemList.insertAdjacentHTML('beforeend', itemHTML);
     miniCartEmpty.classList.remove('hidden');
   }
 }
