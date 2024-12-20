@@ -11,13 +11,44 @@
   "sections": {
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {
         "padding_top": 28,
         "padding_bottom": 28
       }
+    },
+    "main_heroimage_8Cf7cX": {
+      "type": "main-heroimage",
+      "settings": {
+        "hero_image_background": "shopify://shop_images/Rectangle_2x_7de7e2f5-a274-4749-8015-80e761c23094.png",
+        "hero_image_height": "688",
+        "vertical_image_layout": "container-fluid",
+        "hero_image_title": "About us",
+        "hero_image_content": "<p>We are lorem Ipsum is simply dummy text of the printing and typesetting industry. som er brugt siden 1500 er gengivet nedenfor for de, der er interesserede. Afsnittene 1.10.32 og 1.10.33 fra \"de Finibus Bonorum et Malorum\" af Cicero er også gengivet i deres nøjagtige udgave.</p>",
+        "hero_image_fontcolor": "#ffffff",
+        "hero_image_button_1_show": false,
+        "hero_image_button_1_text": "SE NEDSATTE VARER",
+        "hero_image_button_1_url": "",
+        "hero_image_button_1_fontcolor": "#ffffff",
+        "hero_image_button_1_fontcolor_hover": "#67796d",
+        "hero_image_button_1_backgroundcolor": "#67796d",
+        "hero_image_button_2_show": false,
+        "hero_image_button_2_text": "SE NEDSATTE VARER",
+        "hero_image_button_2_url": "",
+        "hero_image_button_2_fontcolor": "#ffffff",
+        "hero_image_button_2_fontcolor_hover": "#67796d",
+        "hero_image_button_2_backgroundcolor": "#67796d",
+        "hero_image_button_3_text": "SE NEDSATTE VARER",
+        "hero_image_button_3_show": false,
+        "hero_image_button_3_url": "",
+        "hero_image_button_3_fontcolor": "#ffffff",
+        "hero_image_button_3_fontcolor_hover": "#67796d",
+        "hero_image_button_3_backgroundcolor": "#67796d"
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "main_heroimage_8Cf7cX"
   ]
 }
